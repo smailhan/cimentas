@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Talepler</title>
+<script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms"></script>
+<script src="assets/kabuk.js"></script>
+</head>
+<body>
+<main data-kabuk="ic" data-menu="talepler" class="flex-1 p-4 md:p-6 lg:p-7 space-y-5">
+
+<section class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+  <div class="flex flex-wrap items-start justify-between gap-4">
+    <div class="min-w-0">
+      <nav aria-label="Konum" class="flex items-center space-x-1.5 text-xs text-slate-400"><a class="hover:text-slate-900" href="pano.html">Pano</a><span>/</span><span class="text-slate-600 font-medium">Talepler</span></nav>
+      <h2 class="mt-1.5 text-2xl font-bold tracking-tight text-slate-900">Şantiye talepleri</h2>
+      <p class="mt-1 text-xs text-slate-400">Kemalpaşa, Bornova, Torbalı ve Menemen santralleri · son 30 gün</p>
+    </div>
+    <div class="flex flex-wrap items-center gap-2">
+      <button data-toast="Liste Excel olarak dışa aktarılıyor" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-600 hover:bg-slate-50" type="button"><i data-ikon="download" class="w-3.5 h-3.5"></i>Dışa aktar</button>
+      <a href="talep-yeni.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-xs font-medium text-white shadow-sm shadow-slate-900/10 hover:bg-slate-800"><i data-ikon="plus" class="w-3.5 h-3.5"></i>Yeni talep</a>
+    </div>
+  </div>
+</section>
+
+<!-- Durum sekmeleri -->
+<nav id="durumlar" class="flex gap-1 rounded-xl bg-white border border-slate-100 shadow-sm p-1 overflow-x-auto" role="tablist"></nav>
+
+<section class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+  <div class="px-5 py-4 flex flex-wrap items-center gap-2 border-b border-slate-100">
+    <div class="relative flex-1 min-w-[200px]">
+      <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"><i data-ikon="search" class="w-4 h-4"></i></span>
+      <input id="ara" type="search" placeholder="Talep no, şantiye veya müşteri ara" class="w-full pl-9 pr-3 py-2 rounded-xl border-slate-200 text-sm placeholder:text-slate-400 focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+    </div>
+    <select class="py-2 pl-3 pr-8 rounded-xl border-slate-200 text-xs text-slate-600 focus:border-[#6366F1] focus:ring-[#6366F1]/20"><option>Tüm santraller</option><option>Kemalpaşa</option><option>Bornova</option><option>Torbalı</option><option>Menemen</option></select>
+    <select class="py-2 pl-3 pr-8 rounded-xl border-slate-200 text-xs text-slate-600 focus:border-[#6366F1] focus:ring-[#6366F1]/20"><option>Döküm: tümü</option><option>Pompalı</option><option>Mikserli</option></select>
+    <select class="py-2 pl-3 pr-8 rounded-xl border-slate-200 text-xs text-slate-600 focus:border-[#6366F1] focus:ring-[#6366F1]/20"><option>YZ risk: tümü</option><option>Yüksek</option><option>Orta</option><option>Düşük</option></select>
+  </div>
+  <div class="overflow-x-auto">
+    <table class="w-full min-w-[980px] text-xs">
+      <thead class="bg-slate-50 text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+        <tr><th class="text-left px-5 py-2.5">No</th><th class="text-left px-3 py-2.5">Şantiye</th><th class="text-left px-3 py-2.5">Santral</th><th class="text-left px-3 py-2.5">Döküm</th><th class="text-center px-3 py-2.5">F02</th><th class="text-center px-3 py-2.5">F03</th><th class="text-left px-3 py-2.5">Görsel</th><th class="text-left px-3 py-2.5">YZ risk</th><th class="text-left px-3 py-2.5">Durum</th><th class="text-left px-3 py-2.5">Bekleme</th><th class="px-3 py-2.5"></th></tr>
+      </thead>
+      <tbody id="satirlar" class="divide-y divide-slate-100"></tbody>
+    </table>
+    <div id="bos" class="hidden px-5 py-10 text-center text-sm text-slate-400">Bu filtreyle eşleşen talep yok.</div>
+  </div>
+  <div class="px-5 py-3 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 text-xs text-slate-500">
+    <span id="sayac">8 talepten 1–8 gösteriliyor</span>
+    <div class="flex items-center gap-1">
+      <button class="w-8 h-8 rounded-lg border border-slate-200 text-slate-400 flex items-center justify-center" disabled><i data-ikon="chev-l" class="w-3.5 h-3.5"></i></button>
+      <button class="w-8 h-8 rounded-lg bg-slate-900 text-white font-semibold">1</button>
+      <button data-toast="Demo verisinde tek sayfa var" class="w-8 h-8 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">2</button>
+      <button data-toast="Demo verisinde tek sayfa var" class="w-8 h-8 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 flex items-center justify-center"><i data-ikon="chev-r" class="w-3.5 h-3.5"></i></button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var T = [
+    { no: 'ŞNT-2026-0418', ad: 'Yıldız Konutları B Blok', mus: 'Ege Yapı İnşaat', san: 'Kemalpaşa', dok: 'Pompalı', f2: 'ok', f3: 'ok', gor: '5/6', gorEksik: true, risk: 'Yüksek', skor: 78, durum: 'inceleme', bek: '6 sa' },
+    { no: 'ŞNT-2026-0417', ad: 'Torbalı Fabrika Ek Bina', mus: 'Kaya Endüstriyel', san: 'Torbalı', dok: 'Pompalı', f2: 'ok', f3: 'bekle', gor: '0/6', risk: null, skor: null, durum: 'formlar', bek: '2 gün' },
+    { no: 'ŞNT-2026-0416', ad: 'Bornova Okul Spor Salonu', mus: 'Atlas Taahhüt', san: 'Bornova', dok: 'Mikserli', f2: 'ok', f3: 'ok', gor: '6/6', risk: 'Düşük', skor: 18, durum: 'inceleme', bek: '2 sa' },
+    { no: 'ŞNT-2026-0415', ad: 'Gaziemir Villa Projesi', mus: 'Demirtaş Yapı', san: 'Kemalpaşa', dok: 'Pompalı', f2: 'ok', f3: 'ek', gor: '4/6', gorEksik: true, risk: 'Orta', skor: 52, durum: 'ek', bek: '17 sa' },
+    { no: 'ŞNT-2026-0414', ad: 'Çiğli Ticaret Merkezi', mus: 'Körfez İnşaat', san: 'Menemen', dok: 'Pompalı', f2: 'ok', f3: 'ok', gor: '6/6', risk: 'Orta', skor: 41, durum: 'onay', bek: '4 sa' },
+    { no: 'ŞNT-2026-0412', ad: 'Buca Kentsel Dönüşüm 3. Etap', mus: 'Yaşam Yapı', san: 'Bornova', dok: 'Pompalı', f2: 'ok', f3: 'ok', gor: '6/6', risk: 'Yüksek', skor: 91, durum: 'red', bek: '—', not: 'hat <6 m' },
+    { no: 'ŞNT-2026-0409', ad: 'Menemen Lojistik Depo', mus: 'Anadolu Lojistik', san: 'Menemen', dok: 'Pompalı', f2: 'ok', f3: 'ok', gor: '6/6', risk: 'Düşük', skor: 22, durum: 'md', bek: '1 sa' },
+    { no: 'ŞNT-2026-0405', ad: 'Kemalpaşa OSB Arıtma', mus: 'Yeşil Çevre Müh.', san: 'Kemalpaşa', dok: 'Mikserli', f2: 'ok', f3: 'ok', gor: '6/6', risk: 'Düşük', skor: 12, durum: 'acildi', bek: '—' },
+  ];
+  var DURUM = {
+    inceleme: ['İncelemede', 'text-amber-700 bg-amber-50', 'bg-amber-500'],
+    formlar: ['Formlar bekleniyor', 'text-slate-600 bg-slate-100', 'bg-slate-400'],
+    ek: ['Ek bilgi istendi', 'text-[#4338CA] bg-[#E0E7FF]', 'bg-[#4338CA]'],
+    onay: ['Bölge müdürü onayında', 'text-amber-700 bg-amber-50', 'bg-amber-500'],
+    md: ['Master Data bekliyor', 'text-slate-600 bg-slate-100', 'bg-slate-400'],
+    acildi: ['Şantiye açıldı', 'text-emerald-600 bg-emerald-50', 'bg-emerald-500'],
+    red: ['Reddedildi', 'text-rose-500 bg-rose-50', 'bg-rose-500'],
+  };
+  var SEKMELER = [['tumu', 'Tümü'], ['inceleme', 'İncelemede'], ['formlar', 'Formlar bekleniyor'], ['ek', 'Ek bilgi'], ['onay', 'Onayda'], ['md', 'Master Data'], ['acildi', 'Açıldı'], ['red', 'Reddedildi']];
+  var RISK = { 'Yüksek': ['text-rose-500 bg-rose-50', 'bg-rose-500'], 'Orta': ['text-amber-700 bg-amber-50', 'bg-amber-500'], 'Düşük': ['text-emerald-600 bg-emerald-50', 'bg-emerald-500'] };
+  var secili = 'tumu';
+
+  function formIkon(d) {
+    if (d === 'ok') return '<span title="Geldi" class="inline-flex w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 items-center justify-center"><i data-ikon="check" class="w-3.5 h-3.5"></i></span>';
+    if (d === 'ek') return '<span title="Ek bilgi istendi" class="inline-flex w-6 h-6 rounded-full bg-[#E0E7FF] text-[#4338CA] items-center justify-center"><i data-ikon="message" class="w-3.5 h-3.5"></i></span>';
+    return '<span title="Bekleniyor" class="inline-flex w-6 h-6 rounded-full bg-slate-100 text-slate-400 items-center justify-center"><i data-ikon="clock" class="w-3.5 h-3.5"></i></span>';
+  }
+
+  function sekmeleriCiz() {
+    var nav = document.getElementById('durumlar');
+    nav.innerHTML = SEKMELER.map(function (s) {
+      var n = s[0] === 'tumu' ? T.length : T.filter(function (t) { return t.durum === s[0]; }).length;
+      var on = s[0] === secili;
+      return '<button data-durum="' + s[0] + '" role="tab" aria-selected="' + on + '" type="button" class="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition ' + (on ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-50') + '">' + s[1] + ' <span class="ml-0.5 text-[10px] opacity-70 tnum">' + n + '</span></button>';
+    }).join('');
+  }
+
+  function satirlariCiz() {
+    var q = document.getElementById('ara').value.trim().toLocaleLowerCase('tr');
+    var liste = T.filter(function (t) {
+      if (secili !== 'tumu' && t.durum !== secili) return false;
+      if (!q) return true;
+      return (t.no + ' ' + t.ad + ' ' + t.mus + ' ' + t.san).toLocaleLowerCase('tr').indexOf(q) >= 0;
+    });
+    var tb = document.getElementById('satirlar');
+    tb.innerHTML = liste.map(function (t) {
+      var d = DURUM[t.durum];
+      var r = t.risk ? RISK[t.risk] : null;
+      var risk = r
+        ? '<div class="flex items-center gap-2"><span class="inline-flex text-[11px] font-semibold ' + r[0] + ' px-2 py-0.5 rounded-full">' + t.risk + '</span><div class="w-14 bg-slate-100 h-1.5 rounded-full overflow-hidden"><div class="' + r[1] + ' h-full rounded-full" style="width:' + t.skor + '%"></div></div><span class="text-slate-500 tnum">' + t.skor + '</span></div>'
+        : '<span class="text-slate-400">— formlar tamamlanınca</span>';
+      return '<tr data-no="' + t.no + '" class="cursor-pointer hover:bg-slate-50 transition">' +
+        '<td class="px-5 py-3.5 font-mono text-[11px] text-slate-500 whitespace-nowrap">' + t.no + '</td>' +
+        '<td class="px-3 py-3.5"><div class="text-sm font-semibold text-slate-900">' + t.ad + '</div><div class="text-[11px] text-slate-400">' + t.mus + '</div></td>' +
+        '<td class="px-3 py-3.5 text-slate-600">' + t.san + '</td>' +
+        '<td class="px-3 py-3.5 text-slate-600">' + t.dok + '</td>' +
+        '<td class="px-3 py-3.5 text-center">' + formIkon(t.f2) + '</td>' +
+        '<td class="px-3 py-3.5 text-center">' + formIkon(t.f3) + '</td>' +
+        '<td class="px-3 py-3.5 tnum ' + (t.gorEksik ? 'text-rose-500 font-semibold' : 'text-slate-600') + '">' + t.gor + (t.gorEksik ? ' <span class="font-normal text-[10px]">eksik</span>' : '') + '</td>' +
+        '<td class="px-3 py-3.5">' + risk + '</td>' +
+        '<td class="px-3 py-3.5"><span class="inline-flex items-center gap-1 whitespace-nowrap text-[11px] font-semibold ' + d[1] + ' px-2 py-0.5 rounded-full"><span class="w-1.5 h-1.5 rounded-full ' + d[2] + '"></span>' + d[0] + '</span>' + (t.not ? '<div class="mt-0.5 text-[10px] text-slate-400">' + t.not + '</div>' : '') + '</td>' +
+        '<td class="px-3 py-3.5 text-slate-500 whitespace-nowrap">' + t.bek + '</td>' +
+        '<td class="px-3 py-3.5 text-right"><button data-menu-satir aria-label="Diğer işlemler" class="p-1.5 rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-700" type="button"><i data-ikon="more" class="w-4 h-4"></i></button></td>' +
+        '</tr>';
+    }).join('');
+    document.getElementById('bos').classList.toggle('hidden', liste.length > 0);
+    document.getElementById('sayac').textContent = T.length + ' talepten ' + liste.length + ' gösteriliyor';
+    ui.ikonlariCiz(tb);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    sekmeleriCiz();
+    satirlariCiz();
+    document.getElementById('durumlar').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-durum]');
+      if (!b) return;
+      secili = b.getAttribute('data-durum');
+      sekmeleriCiz();
+      satirlariCiz();
+    });
+    document.getElementById('ara').addEventListener('input', satirlariCiz);
+    document.getElementById('satirlar').addEventListener('click', function (e) {
+      if (e.target.closest('[data-menu-satir]')) { ui.toast('Sorumluyu değiştir · PDF dışa aktar · Hatırlatma gönder'); return; }
+      var tr = e.target.closest('tr[data-no]');
+      if (!tr) return;
+      if (tr.getAttribute('data-no') === 'ŞNT-2026-0418') location.href = 'talep-detay.html';
+      else ui.toast(tr.getAttribute('data-no') + ' · bu mockupta yalnız ŞNT-2026-0418 detayı açılır');
+    });
+  });
+})();
+</script>
+</main>
+</body>
+</html>

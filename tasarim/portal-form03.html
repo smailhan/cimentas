@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pompa Şantiye Değerlendirmesi</title>
+<script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms"></script>
+<script src="assets/kabuk.js"></script>
+<style>canvas.imza{touch-action:none}</style>
+</head>
+<body data-kabuk="portal" style="background:#f8fafc">
+<div class="min-h-screen bg-slate-50">
+
+<!-- Portal üst şeridi -->
+<header class="bg-white border-b border-slate-100 sticky top-0 z-30">
+  <div class="max-w-lg mx-auto px-4 h-16 flex items-center justify-between gap-3">
+    <div class="flex items-center gap-3 min-w-0">
+      <span class="w-9 h-9 rounded-xl bg-slate-900 text-white text-xs font-bold flex items-center justify-center shrink-0">ÇB</span>
+      <div class="min-w-0"><div class="text-sm font-semibold text-slate-900 truncate">Çimbeton</div><div class="text-[11px] text-slate-400 truncate">Pompa Şantiye Değerlendirmesi · Form 03</div></div>
+    </div>
+    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 leading-tight text-right"><i data-ikon="lock" class="w-3.5 h-3.5"></i><span>Size özel bağlantı<br/>22.11.2026'ya kadar geçerli</span></div>
+  </div>
+  <div class="max-w-lg mx-auto px-4 pb-3">
+    <div class="flex items-center justify-between text-[11px]"><span class="font-semibold text-slate-700" id="adim-ad">Doğrulama</span><span class="text-slate-400 tnum">Adım <span id="adim-no">1</span> / 8</span></div>
+    <div class="mt-1.5 h-1.5 w-full bg-slate-100 rounded-full overflow-hidden"><div id="ilerleme" class="h-full bg-slate-900 rounded-full transition-all duration-300" style="width:12.5%"></div></div>
+  </div>
+</header>
+
+<main class="max-w-lg mx-auto px-4 py-5 space-y-4">
+
+<!-- 1 · Karşılama + SMS -->
+<section data-adim="1" class="space-y-4">
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="text-xs text-slate-400">Sayın Serkan Demir,</div>
+    <h1 class="mt-1 text-xl font-bold tracking-tight text-slate-900">Şantiye keşif değerlendirmeniz isteniyor</h1>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Çimbeton Kemalpaşa Santrali, <b class="font-semibold">Akdeniz Pompa Hizmetleri Ltd.</b> olarak aşağıdaki şantiyede pompa kurulumu ve beton dökümü için saha değerlendirmenizi rica ediyor. Fotoğraf, video ve kroki ekleyeceğiniz için formu <b class="font-semibold">şantiyedeyken</b> doldurmanızı öneririz (~10 dk).</p>
+    <div class="mt-4 rounded-xl bg-slate-50 p-4">
+      <div class="text-[11px] font-semibold uppercase tracking-wide text-slate-400">Proje</div>
+      <div class="mt-1 text-base font-semibold text-slate-900">Yıldız Konutları B Blok</div>
+      <dl class="mt-3 grid grid-cols-2 gap-x-4 gap-y-2.5 text-xs">
+        <div><dt class="text-slate-400">Santral</dt><dd class="font-medium text-slate-800">Kemalpaşa Santrali</dd></div>
+        <div><dt class="text-slate-400">Müşteri / Bayi</dt><dd class="font-medium text-slate-800">Ege Yapı İnşaat Ltd. Şti.</dd></div>
+        <div class="col-span-2"><dt class="text-slate-400">Şantiye adresi</dt><dd class="font-medium text-slate-800">Ulucak Mah. 1203 Sk. No:14, Kemalpaşa / İzmir</dd></div>
+        <div><dt class="text-slate-400">Şantiye yetkilisi</dt><dd class="font-medium text-slate-800">Kemal Aydın · 0532 *** 41 27</dd></div>
+        <div><dt class="text-slate-400">Planlanan döküm</dt><dd class="font-medium text-slate-800">21.11.2026 08:00 · ~180 m³</dd></div>
+      </dl>
+      <button data-toast="Yol tarifi haritada açılıyor (demo)" class="mt-3 w-full h-11 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-700 inline-flex items-center justify-center gap-2"><i data-ikon="pin" class="w-4 h-4"></i>Şantiyeye yol tarifi</button>
+    </div>
+    <div class="mt-3 rounded-xl bg-emerald-50 px-4 py-2.5 text-xs text-emerald-700 inline-flex items-center gap-2 w-full"><i data-ikon="check-circle" class="w-4 h-4"></i>Şantiye yetkilisinin İSG beyanı (Form 02) 17.11.2026'da alındı.</div>
+  </div>
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="flex items-center gap-2.5"><span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center"><i data-ikon="phone" class="w-4 h-4"></i></span><span class="text-sm font-semibold text-slate-900">Kimliğinizi doğrulayın</span></div>
+    <p class="mt-2 text-xs text-slate-500"><b class="text-slate-700 tnum">0533 *** 18 62</b> numaralı telefonunuza 6 haneli bir kod gönderdik.</p>
+    <div id="otp-giris" class="mt-4 flex justify-between gap-2">
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+    </div>
+    <div class="mt-3 flex items-center justify-between text-xs">
+      <button data-toast="Yeni kod gönderildi" class="min-h-[44px] text-slate-500 hover:text-slate-900">Kodu yeniden gönder <span class="text-slate-400 tnum">(0:45)</span></button>
+      <button type="button" onclick="otpDoldur(document.getElementById('otp-giris'))" class="min-h-[44px] font-medium text-[#4338CA]">Demo: kodu doldur</button>
+    </div>
+    <label class="mt-2 flex items-start gap-3 p-3 rounded-xl border border-slate-200 has-[:checked]:border-slate-900 has-[:checked]:bg-[#E0E7FF]/40 min-h-[44px]">
+      <input id="kvkk-onay" type="checkbox" class="mt-0.5 w-5 h-5 rounded border-slate-300 text-slate-900 focus:ring-[#6366F1]"/>
+      <span class="text-xs text-slate-700"><button type="button" data-toast="KVKK aydınlatma metni açılır (Form 02 portalındaki metinle aynı)" class="font-semibold underline">KVKK aydınlatma metnini</button> okudum; fotoğraf ve videolarda konum bilgisinin işlenmesini anladım.</span>
+    </label>
+  </div>
+</section>
+
+<!-- 2 · Döküm şekli -->
+<section data-adim="2" class="hidden space-y-4">
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="text-sm font-semibold text-slate-900">Döküm şekli</div>
+    <div class="text-[11px] text-slate-400">Sorulacak kontrol maddeleri buna göre değişir</div>
+    <div class="mt-4 space-y-2">
+      <label class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 has-[:checked]:border-slate-900 has-[:checked]:bg-[#E0E7FF]/30 cursor-pointer">
+        <input type="radio" name="dokum" value="pompali" checked class="w-5 h-5 border-slate-300 text-slate-900 focus:ring-[#6366F1]"/>
+        <span class="w-11 h-11 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center shrink-0"><i data-ikon="pump" class="w-6 h-6"></i></span>
+        <span><span class="block text-sm font-semibold text-slate-900">Pompalı döküm</span><span class="block text-xs text-slate-500">9 kontrol maddesinin tamamı</span></span>
+      </label>
+      <label class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 has-[:checked]:border-slate-900 has-[:checked]:bg-[#E0E7FF]/30 cursor-pointer">
+        <input type="radio" name="dokum" value="mikserli" class="w-5 h-5 border-slate-300 text-slate-900 focus:ring-[#6366F1]"/>
+        <span class="w-11 h-11 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center shrink-0"><i data-ikon="truck" class="w-6 h-6"></i></span>
+        <span><span class="block text-sm font-semibold text-slate-900">Mikserli döküm</span><span class="block text-xs text-slate-500">Yalnız 1, 2, 3, 6, 7 ve 9 numaralı maddeler</span></span>
+      </label>
+    </div>
+  </div>
+  <div id="pompa-bilgi" class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 space-y-3">
+    <div class="text-sm font-semibold text-slate-900">Pompa bilgisi</div>
+    <div class="grid grid-cols-2 gap-3">
+      <label class="block"><span class="text-xs font-medium text-slate-600">Bom uzunluğu (m)</span><input value="42" inputmode="numeric" class="mt-1 w-full h-11 rounded-xl border-slate-200 text-sm tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/></label>
+      <label class="block"><span class="text-xs font-medium text-slate-600">Pompa plakası</span><input value="35 APM 042" class="mt-1 w-full h-11 rounded-xl border-slate-200 text-sm focus:border-[#6366F1] focus:ring-[#6366F1]/20"/></label>
+    </div>
+    <div class="flex items-center gap-2 rounded-xl bg-emerald-50 px-3 py-2.5 text-xs text-emerald-700"><i data-ikon="shield" class="w-4 h-4"></i>Periyodik kontrol raporu geçerli · 03.2027'ye kadar</div>
+  </div>
+</section>
+
+<!-- 3 · Kontrol maddeleri (JS ile) -->
+<section data-adim="3" class="hidden space-y-4">
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="flex items-start justify-between gap-3">
+      <div><div class="text-sm font-semibold text-slate-900">Kontrol maddeleri</div><div class="text-[11px] text-slate-400"><span id="yanit-sayac" class="tnum">0 / 9</span> yanıtlandı · riskli cevaplarda açıklama zorunlu</div></div>
+      <button type="button" id="demo-doldur" class="min-h-[44px] text-xs font-medium text-[#4338CA] shrink-0">Demo: senaryo yanıtları</button>
+    </div>
+    <div id="mikser-not" class="hidden mt-3 rounded-xl bg-slate-50 px-3 py-2.5 text-xs text-slate-600">Sadece mikserli döküm seçildiği için 1, 2, 3, 6, 7 ve 9 numaralı maddeler gösteriliyor.</div>
+  </div>
+  <div id="maddeler" class="space-y-3"></div>
+</section>
+
+<!-- 4 · Havai hat -->
+<section data-adim="4" class="hidden space-y-4">
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between"><span class="text-sm font-semibold text-slate-900">Havai elektrik hattı</span><span class="text-[10px] text-slate-400">ÇSGB Kart 6</span></div>
+    <p class="mt-1 text-xs text-slate-500">Pompa kurulum noktası ile <b class="text-slate-700">en yakın havai hat</b> arasındaki mesafe nedir?</p>
+    <div id="hat-secenek" class="mt-4 space-y-2"></div>
+    <div id="hat-karar" class="hidden mt-4 rounded-xl p-4"></div>
+  </div>
+  <div class="rounded-2xl bg-amber-50 border border-amber-100 p-4 flex gap-3">
+    <span class="w-8 h-8 rounded-lg bg-white text-amber-600 flex items-center justify-center shrink-0"><i data-ikon="alert" class="w-4 h-4"></i></span>
+    <div><div class="text-xs font-semibold text-amber-800 inline-flex items-center gap-1"><i data-ikon="sparkle" class="w-3 h-3"></i>Hava durumu uyarısı</div><p class="mt-1 text-xs text-slate-700 leading-relaxed">21.11.2026 Kemalpaşa için <b>%60 yağış</b> bekleniyor. Yağışlı havada güvenli mesafenin <b>iki katına</b> çıkarılması önerilir (ör. 7,5 m → 15 m).</p></div>
+  </div>
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <p class="text-sm font-semibold text-slate-900 leading-relaxed">Yukarıdaki Havai Elektrik Hattı Değerlendirme Kriterleri Sağlandı mı?</p>
+    <div class="mt-3 grid grid-cols-2 gap-3">
+      <button type="button" data-cevap="hat" data-deger="E" class="h-12 rounded-xl border-2 border-slate-200 bg-white text-sm font-semibold text-slate-700 inline-flex items-center justify-center gap-2"><i data-ikon="check" class="w-4 h-4"></i>Evet</button>
+      <button type="button" data-cevap="hat" data-deger="H" class="h-12 rounded-xl border-2 border-slate-200 bg-white text-sm font-semibold text-slate-700 inline-flex items-center justify-center gap-2"><i data-ikon="x" class="w-4 h-4"></i>Hayır</button>
+    </div>
+    <textarea data-aciklama-alan="hat" rows="2" placeholder="Açıklama / önlem (ör. işaretçi, bariyerleme)" class="mt-3 w-full rounded-xl border-slate-200 text-sm focus:border-[#6366F1] focus:ring-[#6366F1]/20"></textarea>
+    <p class="mt-2 text-[11px] text-slate-400 inline-flex items-center gap-1"><i data-ikon="sparkle" class="w-3 h-3 text-[#4338CA]"></i>Bir sonraki adımda yükleyeceğiniz fotoğraflar bu beyanla karşılaştırılacak.</p>
+  </div>
+</section>
+
+<!-- 5 · Fotoğraf ve video -->
+<section data-adim="5" class="hidden space-y-4">
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between gap-2">
+      <div><div class="text-sm font-semibold text-slate-900">Zorunlu fotoğraflar</div><div class="text-[11px] text-slate-400">YZ her fotoğrafı türüne göre otomatik tanır</div></div>
+      <span id="tur-sayac" class="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full tnum">0 / 6</span>
+    </div>
+    <ul id="tur-liste" class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-1.5"></ul>
+    <div id="eksik-kutu" class="mt-3 rounded-xl bg-amber-50 px-3 py-2.5 text-xs text-amber-800"></div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-3">
+    <button type="button" id="foto-ekle" class="h-14 rounded-xl bg-slate-900 text-white text-sm font-semibold inline-flex items-center justify-center gap-2 shadow-sm shadow-slate-900/10"><i data-ikon="camera" class="w-5 h-5"></i>Fotoğraf çek</button>
+    <button type="button" id="foto-yukle" class="h-14 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 inline-flex items-center justify-center gap-2"><i data-ikon="upload" class="w-5 h-5"></i>Galeriden yükle</button>
+  </div>
+  <div id="foto-liste" class="space-y-3"></div>
+
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between gap-2">
+      <div><div class="text-sm font-semibold text-slate-900">Video kaydı</div><div class="text-[11px] text-slate-400">Çalışma alanında 30–60 sn yürüyerek çekin</div></div>
+      <button type="button" id="video-ekle" class="h-11 px-4 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 inline-flex items-center gap-2"><i data-ikon="video" class="w-4 h-4"></i>Video ekle</button>
+    </div>
+    <div id="video-kart" class="hidden mt-4"></div>
+  </div>
+  <p class="text-[11px] text-slate-400 text-center">Fotoğraf ve videolar tesis şefiyle paylaşılır ve sevkiyat kayıtlarında saklanır.</p>
+</section>
+
+<!-- 6 · Kroki -->
+<section data-adim="6" class="hidden space-y-4">
+  <div data-sekmeler class="space-y-4">
+    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+      <div class="text-sm font-semibold text-slate-900">Pompa yerleşim krokisi</div>
+      <p class="text-[11px] text-slate-400">Pompa konumu, döküm noktası, mikser bekleme alanı, havai hatlar, direkler, yollar ve kazı alanları gösterilmeli.</p>
+      <nav class="mt-3 grid grid-cols-2 gap-1 rounded-xl bg-slate-50 border border-slate-100 p-1" role="tablist">
+        <button data-sekme="harita" class="h-10 rounded-lg text-xs font-medium transition bg-slate-900 text-white" type="button">Harita üzerinde çiz</button>
+        <button data-sekme="elle" class="h-10 rounded-lg text-xs font-medium transition text-slate-600 hover:bg-slate-50" type="button">Elle çizilmiş kroki</button>
+      </nav>
+    </div>
+
+    <div data-sekme-panel="harita" class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+      <div class="text-[11px] font-semibold uppercase tracking-wide text-slate-400 mb-2">1 · Öğe seçin, 2 · krokiye dokunun</div>
+      <div id="araclar" class="grid grid-cols-5 gap-1.5"></div>
+      <div id="kroki" class="mt-3 relative h-80 rounded-xl overflow-hidden bg-[#EEF1F4] border border-slate-200 cursor-crosshair select-none">
+        <svg viewBox="0 0 320 320" class="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
+          <rect x="0" y="236" width="320" height="56" fill="#fff"/>
+          <line x1="0" y1="264" x2="320" y2="264" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10 8"/>
+          <rect x="60" y="40" width="150" height="120" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+          <text x="135" y="104" text-anchor="middle" font-size="12" fill="#64748b" font-family="Inter">B Blok (inşaat)</text>
+          <rect x="230" y="70" width="70" height="50" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-dasharray="4 3"/>
+          <text x="265" y="99" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="Inter">istif</text>
+          <path d="M0 20 L320 34" stroke="#f43f5e" stroke-width="2.5" stroke-dasharray="6 4"/>
+          <text x="8" y="14" font-size="10" fill="#e11d48" font-family="Inter" font-weight="600">havai hat ✦ haritadan</text>
+          <text x="300" y="282" text-anchor="end" font-size="10" fill="#94a3b8" font-family="Inter">1203 Sk.</text>
+        </svg>
+      </div>
+      <div class="mt-3 flex items-center justify-between gap-2">
+        <span id="kroki-sayac" class="text-xs text-slate-500">Henüz öğe yok</span>
+        <div class="flex gap-2">
+          <button type="button" id="kroki-geri" class="h-11 px-3 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600">Geri al</button>
+          <button type="button" id="kroki-temizle" class="h-11 px-3 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-600">Temizle</button>
+        </div>
+      </div>
+      <button type="button" id="kroki-demo" class="mt-2 min-h-[44px] text-xs font-medium text-[#4338CA]">Demo: örnek krokiyi yerleştir</button>
+    </div>
+
+    <div data-sekme-panel="elle" class="hidden bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+      <button type="button" id="elle-yukle" class="w-full h-32 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center gap-2 text-slate-500 hover:bg-slate-100">
+        <i data-ikon="camera" class="w-6 h-6"></i><span class="text-sm font-medium">Kâğıda çizdiğiniz krokinin fotoğrafını çekin</span>
+      </button>
+      <div id="elle-sonuc" class="hidden mt-4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · Sonuç + taahhüt + imza -->
+<section data-adim="7" class="hidden space-y-4">
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="text-sm font-semibold text-slate-900">Sonuç</div>
+    <div class="text-[11px] text-slate-400">Mobil pompa operatörü veya firma yetkilisinin tek taraflı değerlendirmesine göre</div>
+    <div class="mt-4 space-y-2">
+      <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-200 has-[:checked]:border-emerald-500 has-[:checked]:bg-emerald-50 cursor-pointer min-h-[56px]"><input type="radio" name="sonuc" value="yapilabilir" class="w-5 h-5 border-slate-300 text-emerald-600 focus:ring-emerald-500"/><span class="text-sm font-semibold text-slate-800">Döküm yapılabilir</span></label>
+      <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-200 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-50 cursor-pointer min-h-[56px]"><input type="radio" name="sonuc" value="tedbir" class="w-5 h-5 border-slate-300 text-amber-500 focus:ring-amber-500"/><span class="text-sm font-semibold text-slate-800">İlave tedbir sonrası döküm yapılabilir</span></label>
+      <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-200 has-[:checked]:border-rose-500 has-[:checked]:bg-rose-50 cursor-pointer min-h-[56px]"><input type="radio" name="sonuc" value="yapilamaz" class="w-5 h-5 border-slate-300 text-rose-500 focus:ring-rose-500"/><span class="text-sm font-semibold text-slate-800">Döküm yapılamaz</span></label>
+    </div>
+    <label id="tedbir-alan" class="hidden block mt-3"><span class="text-xs font-medium text-slate-600">Alınacak ilave tedbirler <span class="text-rose-500 font-semibold">(zorunlu)</span></span><textarea id="tedbir" rows="2" class="mt-1 w-full rounded-xl border-slate-200 text-sm focus:border-[#6366F1] focus:ring-[#6366F1]/20">İşaretçi bulundurulacak.</textarea>
+      <span class="mt-1 flex items-start gap-1.5 text-[11px] text-[#4338CA]"><i data-ikon="sparkle" class="w-3 h-3 mt-0.5"></i>6–7,5 m bandında kriter "işaretçi, bariyerleme, çalışma planı" ister; yalnız işaretçi yeterli olmayabilir.</span>
+    </label>
+  </div>
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="text-sm font-semibold text-slate-900">Mobil beton pompası hizmet sağlayıcısı taahhüdü</div>
+    <div class="mt-3 max-h-56 overflow-y-auto rounded-xl bg-slate-50 p-4 text-xs text-slate-600 leading-relaxed space-y-2">
+      <p>Bu formu imzalayan Mobil Beton Pompası Hizmet Sağlayıcısı Yetkilisi/ Personeli; verdiği bilgi, belge, fotoğraf ve beyanların doğru, güncel ve eksiksiz olduğunu kabul eder.</p>
+      <p>Yanlış, eksik veya gerçeğe aykırı bilgi ve belge sunulmasından ya da sonradan ortaya çıkan değişikliklerin bildirilmemesinden doğabilecek her türlü hukuki, idari ve cezai sorumluluk münhasıran Mobil Beton Pompası Hizmet Sağlayıcısına aittir.</p>
+      <p>Hizmet Sağlayıcısı Yetkilisi ve/veya firma personeli olan Pompa operatörü, güvenli çalışma koşullarının sağlanmadığını değerlendirmesi halinde çalışmayı başlatmama veya durdurma yetkisine sahiptir. Şu kadar ki Pompa Hizmet Sağlayıcısı, keşif sırasında veya çalışma esnasında tespit ettiği ciddi ve yakın tehlike durumlarında çalışmayı başlatmamak veya durdurmakla yükümlüdür.</p>
+      <p>Pompa Hizmet Sağlayıcısı; ekipmanın teknik uygunluğundan, periyodik kontrollerinden, operatörün mesleki yeterliliğinden, pompanın güvenli kurulumu ve işletilmesinden, çalışma alanının ekipmanın güvenli kullanımı bakımdan uygunluğunun değerlendirilmesinden ve özellikle havai elektrik enerji hatlarına yaklaşma mesafelerinin korunmasından sorumludur.</p>
+      <p>İşbu form, yalnızca imzalayanın kendi değerlendirme ve beyanlarını içermekte olup, herhangi bir kişi veya kuruluş tarafından saha denetimi yapıldığı veya iş sağlığı ve güvenliği yönünden uygunluk onayı verildiği şeklinde yorumlanamaz.</p>
+    </div>
+    <label class="mt-3 flex items-start gap-3 p-3 rounded-xl border border-slate-200 has-[:checked]:border-slate-900 has-[:checked]:bg-[#E0E7FF]/40 min-h-[44px]">
+      <input id="taahhut-onay" type="checkbox" class="mt-0.5 w-5 h-5 rounded border-slate-300 text-slate-900 focus:ring-[#6366F1]"/>
+      <span class="text-sm text-slate-700">Taahhüdü okudum, kabul ediyorum.</span>
+    </label>
+  </div>
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 space-y-3">
+    <div class="text-sm font-semibold text-slate-900">Hizmet sağlayıcısı <span class="font-normal text-slate-400">(mobil pompa operatörü veya firma yetkilisi)</span></div>
+    <label class="block"><span class="text-xs font-medium text-slate-600">Firma</span><input data-imza-alan value="Akdeniz Pompa Hizmetleri Ltd." class="mt-1 w-full h-11 rounded-xl border-slate-200 text-sm focus:border-[#6366F1] focus:ring-[#6366F1]/20"/></label>
+    <div class="grid grid-cols-2 gap-3">
+      <label class="block"><span class="text-xs font-medium text-slate-600">Ad soyad</span><input data-imza-alan value="Serkan Demir" class="mt-1 w-full h-11 rounded-xl border-slate-200 text-sm focus:border-[#6366F1] focus:ring-[#6366F1]/20"/></label>
+      <label class="block"><span class="text-xs font-medium text-slate-600">Görevi</span><input data-imza-alan value="Pompa Operatörü" class="mt-1 w-full h-11 rounded-xl border-slate-200 text-sm focus:border-[#6366F1] focus:ring-[#6366F1]/20"/></label>
+    </div>
+    <label class="block"><span class="text-xs font-medium text-slate-600">Tarih</span><input value="18.11.2026" readonly class="mt-1 w-full h-11 rounded-xl border-slate-200 bg-slate-50 text-sm text-slate-500 tnum"/></label>
+    <div>
+      <div class="flex items-center justify-between"><span class="text-xs font-medium text-slate-600">İmza</span><button type="button" onclick="document.getElementById('imza')._temizle()" class="min-h-[44px] text-xs font-medium text-slate-500 hover:text-slate-900">Temizle</button></div>
+      <div class="relative rounded-xl border-2 border-dashed border-slate-200 bg-slate-50/60">
+        <canvas id="imza" class="imza block w-full h-40"></canvas>
+        <span data-imza-ipucu class="pointer-events-none absolute inset-0 flex items-center justify-center gap-2 text-sm text-slate-400"><i data-ikon="pen" class="w-4 h-4"></i>Parmağınızla buraya imzalayın</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · Teşekkür / takip -->
+<section data-adim="8" class="hidden space-y-4">
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center">
+    <span class="mx-auto w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center"><i data-ikon="check-circle" class="w-7 h-7"></i></span>
+    <h2 class="mt-3 text-xl font-bold tracking-tight text-slate-900">Değerlendirmeniz alındı</h2>
+    <p class="mt-1 text-sm text-slate-600">Teşekkürler Serkan Bey. Formunuz, fotoğraflarınız ve krokiniz SMS ile imzalandı ve Kemalpaşa Santrali tesis şefine iletildi.</p>
+    <div class="mt-3 inline-flex items-center gap-2 text-xs text-slate-500 bg-slate-50 px-3 py-1.5 rounded-full"><span class="font-mono">ŞNT-2026-0418</span><span>·</span><span>18.11.2026 10:15</span></div>
+  </div>
+  <div class="rounded-2xl bg-[#EEF2FF] border border-[#E0E7FF] p-4">
+    <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-lg bg-[#E0E7FF] text-[#4338CA] flex items-center justify-center"><i data-ikon="sparkle" class="w-3.5 h-3.5"></i></span><span class="text-xs font-semibold text-[#3730A3]">YZ ön kontrolü</span></div>
+    <ul id="ozet-liste" class="mt-2 space-y-1.5 text-sm text-slate-700"></ul>
+    <p class="mt-2 text-[11px] text-slate-500">Tesis şefi bu noktalar için ek bilgi isteyebilir; isterse SMS alırsınız.</p>
+  </div>
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="text-sm font-semibold text-slate-900 mb-4">Süreç durumu</div>
+    <ol class="relative border-l border-slate-200 ml-3 space-y-5">
+      <li class="ml-6"><span class="absolute -left-3 w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center ring-4 ring-white"><i data-ikon="check" class="w-3.5 h-3.5"></i></span><div class="text-sm font-semibold text-slate-800">Şantiye yetkilisi beyanı (Form 02)</div><div class="text-xs text-slate-400">17.11.2026 16:40 · Kemal Aydın</div></li>
+      <li class="ml-6"><span class="absolute -left-3 w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center ring-4 ring-white"><i data-ikon="check" class="w-3.5 h-3.5"></i></span><div class="text-sm font-semibold text-slate-800">Pompa değerlendirmeniz (Form 03)</div><div class="text-xs text-slate-400">Tamamlandı · 18.11.2026 10:15</div></li>
+      <li class="ml-6"><span class="absolute -left-3 w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center ring-4 ring-amber-100"><i data-ikon="eye" class="w-3.5 h-3.5"></i></span><div class="text-sm font-semibold text-slate-800">Tesis incelemesi</div><div class="text-xs text-slate-400">Çimbeton tesis şefi inceliyor</div></li>
+      <li class="ml-6"><span class="absolute -left-3 w-6 h-6 rounded-full border-2 border-slate-200 bg-white ring-4 ring-white"></span><div class="text-sm font-semibold text-slate-400">Sonuç ve döküm planı</div><div class="text-xs text-slate-400">Size SMS ile bildirilir</div></li>
+    </ol>
+  </div>
+  <div class="rounded-2xl bg-white border border-slate-100 shadow-sm p-4 flex gap-3">
+    <i data-ikon="alert" class="w-5 h-5 text-amber-500 mt-0.5"></i>
+    <p class="text-xs text-slate-600 leading-relaxed">Döküm günü sahada koşullar değişmişse (yağış, yeni bir engel, hat yakınlığı) <b class="text-slate-800">çalışmayı başlatmama veya durdurma yetkiniz ve yükümlülüğünüz</b> devam eder.</p>
+  </div>
+</section>
+
+<!-- Gezinme -->
+<div id="gezinme" class="flex gap-3 pt-1">
+  <button id="geri" type="button" class="hidden h-12 px-5 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 hover:bg-slate-50 inline-flex items-center gap-1.5"><i data-ikon="chev-l" class="w-4 h-4"></i>Geri</button>
+  <button id="ileri" type="button" class="flex-1 h-12 rounded-xl bg-slate-900 text-white text-sm font-semibold shadow-sm shadow-slate-900/10 hover:bg-slate-800 inline-flex items-center justify-center gap-1.5"><span id="ileri-yazi">Doğrula ve başla</span><i data-ikon="chev-r" class="w-4 h-4"></i></button>
+</div>
+<p class="text-center text-[11px] text-slate-400 pb-2">Sorun mu yaşıyorsunuz? Kemalpaşa Santrali · 0232 *** 00 00</p>
+</main>
+</div>
+
+<!-- Modal: zemin fotoğrafı eksik -->
+<div id="zemin-modal" data-modal class="hidden fixed inset-0 z-50 bg-slate-900/40 flex items-end sm:items-center justify-center p-0 sm:p-4">
+  <div class="w-full max-w-lg bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl p-5">
+    <div class="flex items-center gap-3"><span class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center"><i data-ikon="alert" class="w-5 h-5"></i></span><div class="text-base font-semibold text-slate-900">Eksik fotoğraf var</div></div>
+    <p class="mt-3 text-sm text-slate-600 leading-relaxed"><b class="text-slate-800" id="eksik-metin">Pompa ayağı zemini</b> fotoğrafı yüklenmedi. Bu fotoğraf olmadan tesis şefi büyük olasılıkla ek bilgi isteyecek ve sevkiyat gecikebilir.</p>
+    <div class="mt-3 rounded-xl bg-[#EEF2FF] px-3 py-2.5 text-xs text-slate-700 flex gap-2"><i data-ikon="sparkle" class="w-3.5 h-3.5 text-[#4338CA] mt-0.5"></i>İpucu: Ayakların basacağı noktayı 1–2 m mesafeden, zemin dokusu görünecek şekilde çekin.</div>
+    <div class="mt-4 grid grid-cols-2 gap-3">
+      <button type="button" id="zemin-git" class="h-12 rounded-xl bg-slate-900 text-white text-sm font-semibold inline-flex items-center justify-center gap-2"><i data-ikon="camera" class="w-4 h-4"></i>Fotoğraf ekle</button>
+      <button type="button" id="zemin-gec" class="h-12 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700">Yine de gönder</button>
+    </div>
+    <p class="mt-2 text-[11px] text-slate-400 text-center">"Yine de gönder" seçimi iz kaydına yazılır.</p>
+  </div>
+</div>
+
+<!-- Modal: SMS ile onay -->
+<div id="sms-modal" data-modal class="hidden fixed inset-0 z-50 bg-slate-900/40 flex items-end sm:items-center justify-center p-0 sm:p-4">
+  <div class="w-full max-w-lg bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl p-5">
+    <div class="flex items-center justify-between">
+      <div class="text-sm font-semibold text-slate-900">SMS ile imzala</div>
+      <button data-kapat class="w-11 h-11 rounded-xl text-slate-400 hover:bg-slate-100 flex items-center justify-center"><i data-ikon="x" class="w-4 h-4"></i></button>
+    </div>
+    <p class="mt-1 text-xs text-slate-500"><b class="text-slate-700 tnum">0533 *** 18 62</b> numarasına gönderilen kodu girerek değerlendirmenizi imzalayın.</p>
+    <div id="otp-imza" class="mt-4 flex justify-between gap-2">
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      <input inputmode="numeric" maxlength="1" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 tnum focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+    </div>
+    <button type="button" onclick="otpDoldur(document.getElementById('otp-imza'))" class="mt-2 min-h-[44px] text-xs font-medium text-[#4338CA]">Demo: kodu doldur</button>
+    <button id="sms-onayla" type="button" class="mt-2 w-full h-12 rounded-xl bg-slate-900 text-white text-sm font-semibold inline-flex items-center justify-center gap-2"><i data-ikon="send" class="w-4 h-4"></i>Onayla ve gönder</button>
+  </div>
+</div>
+
+<script>
+// ================= Kontrol maddeleri (Form 03 metinleri birebir) =================
+var MADDELER = [
+  { no: 1, metin: 'Şantiye yol şartları mikser ve pompa girişine uygun mu? Manevra alanı var mı?', demoNot: 'Malzeme istifi var, mikser girişi dar.' },
+  { no: 2, metin: 'Pompa ayaklarının kurulacağı alan, kazı kenarı, şev veya dolgu alanından güvenli mesafede mi?', not: 'Şev veya kazı kenarına güvenli yaklaşma mesafesi; zemin yapısı, şev eğimi ve kazı derinliğine göre değerlendirilmeli, tereddüt halinde şantiye teknik yetkilisinin görüşü alınmalıdır.' },
+  { no: 3, metin: 'Gece çalışması için yeterli aydınlatma mevcut mu?' },
+  { no: 4, metin: 'Pompa ayaklarının kurulacağı alan yeterli genişlikte mi?' },
+  { no: 5, metin: 'Pompa ayağı altında rögar, menhol, kanal, fosseptik, drenaj hattı, yeraltı tesisatları veya altyapı riskleri konusunda şantiye yetkilisinden alınan bilgiler doğrultusunda pompa kurulumu uygun mu?' },
+  { no: 6, metin: 'Çalışma alanında pompa kurulumu ve beton dökümü için işaretçi ihtiyacı karşılanmış mı? (İhtiyaç yoksa da "Evet" işaretlenir.)' },
+  { no: 7, metin: 'Pompa kurulumu ve bom hareketi sırasında havai elektrik hattına güvenli çalışma mesafesi sağlanabiliyor mu?' },
+  { no: 8, metin: 'Pompa ayaklarının basacağı zemin, gözle kontrol edildiğinde pompa kurulumu için uygun görünüyor mu?' },
+  { no: 9, metin: 'Dökümü engelleyecek özel durum mevcut mu? Varsa açıklama yapınız.', riskli: 'E' },
+];
+var MIKSER = [1, 2, 3, 6, 7, 9];
+var cevap = {};
+function riskli(no) { var m = MADDELER[no - 1]; return cevap[no] === (m.riskli || 'H'); }
+function dokum() { return document.querySelector('input[name="dokum"]:checked').value; }
+function aktifMaddeler() { return dokum() === 'mikserli' ? MIKSER : MADDELER.map(function (m) { return m.no; }); }
+
+var mk = document.getElementById('maddeler');
+MADDELER.forEach(function (m) {
+  var d = document.createElement('div');
+  d.setAttribute('data-madde', m.no);
+  d.className = 'bg-white rounded-2xl p-4 shadow-sm border border-slate-100';
+  d.innerHTML =
+    '<div class="flex gap-3"><span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-600 text-xs font-bold flex items-center justify-center shrink-0 tnum">' + m.no + '</span>' +
+    '<div class="min-w-0 flex-1"><p class="text-sm font-medium text-slate-900 leading-relaxed">' + m.metin + '</p>' +
+    (m.not ? '<p class="mt-1 text-[11px] text-slate-500 leading-relaxed"><b class="font-semibold">Not:</b> ' + m.not + '</p>' : '') + '</div></div>' +
+    '<div class="mt-3 grid grid-cols-2 gap-2">' +
+    '<button type="button" data-cevap="' + m.no + '" data-deger="E" class="h-11 rounded-xl border-2 border-slate-200 bg-white text-sm font-semibold text-slate-700 inline-flex items-center justify-center gap-1.5"><i data-ikon="check" class="w-4 h-4"></i>Evet</button>' +
+    '<button type="button" data-cevap="' + m.no + '" data-deger="H" class="h-11 rounded-xl border-2 border-slate-200 bg-white text-sm font-semibold text-slate-700 inline-flex items-center justify-center gap-1.5"><i data-ikon="x" class="w-4 h-4"></i>Hayır</button></div>' +
+    '<textarea data-aciklama-alan="' + m.no + '" rows="1" placeholder="Açıklama / önlem" class="mt-2 w-full rounded-xl border-slate-200 text-sm focus:border-[#6366F1] focus:ring-[#6366F1]/20"></textarea>' +
+    '<p data-zorunlu-uyari class="hidden mt-1 text-[11px] font-semibold text-rose-500">Bu cevap için açıklama zorunlu</p>';
+  mk.appendChild(d);
+});
+function maddeGorunurluk() {
+  var a = aktifMaddeler();
+  document.querySelectorAll('[data-madde]').forEach(function (d) { d.classList.toggle('hidden', a.indexOf(+d.getAttribute('data-madde')) < 0); });
+  document.getElementById('mikser-not').classList.toggle('hidden', dokum() !== 'mikserli');
+  document.getElementById('pompa-bilgi').classList.toggle('hidden', dokum() === 'mikserli');
+  sayacGuncelle();
+}
+function sayacGuncelle() {
+  var a = aktifMaddeler(), n = a.filter(function (no) { return cevap[no]; }).length;
+  document.getElementById('yanit-sayac').textContent = n + ' / ' + a.length;
+}
+document.querySelectorAll('input[name="dokum"]').forEach(function (r) { r.addEventListener('change', maddeGorunurluk); });
+
+var SEC = { E: ['border-emerald-500', 'bg-emerald-50', 'text-emerald-700'], H: ['border-rose-500', 'bg-rose-50', 'text-rose-600'] };
+function sec(anahtar, deger) {
+  cevap[anahtar] = deger;
+  document.querySelectorAll('[data-cevap="' + anahtar + '"]').forEach(function (x) {
+    var on = x.getAttribute('data-deger') === deger;
+    SEC[x.getAttribute('data-deger')].forEach(function (c) { x.classList.toggle(c, on); });
+    x.classList.toggle('border-slate-200', !on); x.classList.toggle('bg-white', !on); x.classList.toggle('text-slate-700', !on);
+  });
+  var kart = document.querySelector('[data-madde="' + anahtar + '"]');
+  if (kart) kart.querySelector('[data-zorunlu-uyari]').classList.toggle('hidden', !riskli(+anahtar));
+  sayacGuncelle();
+}
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('[data-cevap]');
+  if (b) sec(b.getAttribute('data-cevap'), b.getAttribute('data-deger'));
+});
+document.getElementById('demo-doldur').addEventListener('click', function () {
+  aktifMaddeler().forEach(function (no) { sec(String(no), no === 9 ? 'H' : 'E'); });
+  document.querySelector('[data-aciklama-alan="1"]').value = 'Malzeme istifi var, mikser girişi dar.';
+  ui.toast('Senaryo yanıtları dolduruldu');
+});
+
+// ================= Havai hat =================
+var HAT = [
+  { v: '10+', l: "10 m'den uzak", k: 'Çalışılabilir.', s: 'bg-emerald-50 text-emerald-800', n: 'bg-emerald-500' },
+  { v: '7.5-10', l: '7,5 – 10 m', k: 'Şantiye Şefi + Pompa Operatörü ortak değerlendirmesi sonrası çalışılabilir.', s: 'bg-amber-50 text-amber-800', n: 'bg-amber-500' },
+  { v: '6-7.5', l: '6 – 7,5 m', k: 'İlave tedbir (işaretçi, bariyerleme, çalışma planı) alınmadan çalışılamaz.', s: 'bg-orange-50 text-orange-800', n: 'bg-orange-500' },
+  { v: '6-', l: "6 m'den yakın", k: 'Enerji kesilmeden veya hat riski ortadan kaldırılmadan çalışılamaz.', s: 'bg-rose-50 text-rose-800', n: 'bg-rose-500' },
+  { v: 'bom', l: 'Pompa bomunun hatta yaklaşma riski var', k: 'Döküm yapılmaz.', s: 'bg-rose-100 text-rose-900', n: 'bg-rose-600' },
+];
+var hatSecim = null;
+document.getElementById('hat-secenek').innerHTML = HAT.map(function (h) {
+  return '<label class="flex items-center gap-3 p-3.5 rounded-xl border-2 border-slate-200 has-[:checked]:border-slate-900 cursor-pointer min-h-[52px]"><input type="radio" name="hat" value="' + h.v + '" class="w-5 h-5 border-slate-300 text-slate-900 focus:ring-[#6366F1]"/><span class="w-2.5 h-2.5 rounded-full ' + h.n + ' shrink-0"></span><span class="text-sm font-semibold text-slate-800">' + h.l + '</span></label>';
+}).join('');
+document.querySelectorAll('input[name="hat"]').forEach(function (r) {
+  r.addEventListener('change', function () {
+    hatSecim = HAT.filter(function (h) { return h.v === r.value; })[0];
+    var k = document.getElementById('hat-karar');
+    k.className = 'mt-4 rounded-xl p-4 ' + hatSecim.s;
+    k.innerHTML = '<div class="text-[11px] font-semibold uppercase tracking-wide opacity-70">Kriter kararı</div><div class="mt-1 text-sm font-semibold">' + hatSecim.k + '</div>' +
+      (hatSecim.v === '7.5-10' ? '<p class="mt-1 text-xs opacity-80">Şantiye şefi Kemal Aydın ile ortak değerlendirme yaptığınızı açıklamaya yazın.</p>' : '') +
+      (hatSecim.v === '6-' || hatSecim.v === 'bom' ? '<p class="mt-1 text-xs opacity-80">Bu durumda "Kriterler sağlandı mı" sorusuna "Hayır" cevabı beklenir.</p>' : '');
+  });
+});
+
+// ================= Fotoğraflar =================
+var TURLER = [
+  ['genel', 'Genel şantiye görünümü'], ['kurulum', 'Pompa kurulum alanı'], ['zemin', 'Pompa ayağı zemini'],
+  ['hat', 'Havai elektrik hattı'], ['mikser', 'Mikser güzergahı'], ['birlikte', 'Hat + pompa alanı birlikte'],
+];
+var tamam = {};
+function turAd(t) { return TURLER.filter(function (x) { return x[0] === t; })[0][1]; }
+function turCiz() {
+  var n = 0;
+  document.getElementById('tur-liste').innerHTML = TURLER.map(function (t) {
+    var ok = tamam[t[0]]; if (ok) n++;
+    return '<li class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs ' + (ok ? 'bg-emerald-50 text-emerald-700 font-medium' : 'bg-slate-50 text-slate-500') + '">' +
+      (ok ? ui.svg('check-circle', 'w-4 h-4 shrink-0') : '<span class="w-4 h-4 rounded-full border-2 border-slate-300 shrink-0"></span>') + t[1] + '</li>';
+  }).join('');
+  var s = document.getElementById('tur-sayac');
+  s.textContent = n + ' / 6';
+  s.className = 'text-xs font-semibold px-2 py-0.5 rounded-full tnum ' + (n === 6 ? 'text-emerald-600 bg-emerald-50' : 'text-slate-600 bg-slate-100');
+  var eksik = TURLER.filter(function (t) { return !tamam[t[0]]; }).map(function (t) { return t[1]; });
+  var ek = document.getElementById('eksik-kutu');
+  ek.classList.toggle('hidden', !eksik.length);
+  ek.innerHTML = '<span class="inline-flex items-start gap-1.5"><span class="mt-0.5">' + ui.svg('sparkle', 'w-3.5 h-3.5') + '</span><span><b class="font-semibold">Eksik:</b> ' + eksik.join(', ') + '</span></span>';
+}
+turCiz();
+
+var KUYRUK = [
+  { src: 'assets/foto-hat-bina.jpg', tur: 'birlikte', tespit: ['3 iletken havai hat tespit edildi', 'Bom açılım alanı hattın altında kalıyor', 'Malzeme istifi manevra alanını daraltıyor'], mesafe: true },
+  { src: 'assets/foto-hat-sokak.jpg', tur: 'mikser', tespit: ['Yol üzerinde havai hat ve beton direk', 'Yol genişliği yaklaşık 6 m', 'Sağ şeritte 4 park halinde araç'] },
+  { yer: 'Karanlık çekim', bulanik: true },
+  { yer: 'Genel görünüm', tur: 'genel', tespit: ['Şantiye girişi ve bina cephesi görünüyor', 'Kazı veya şev görülmedi'] },
+  { yer: 'Direk yakın çekim', tur: 'hat', tespit: ['Orta gerilim direği (tahmini)', 'İletken yüksekliği yaklaşık 9 m'] },
+  { yer: 'Kurulum alanı', tur: 'kurulum', tespit: ['Düz, asfalt zemin', 'Ayak açılımı için yaklaşık 7 m genişlik'] },
+];
+var sira = 0;
+function gorselHtml(f) {
+  if (f.src) return '<img src="' + f.src + '" alt="" class="w-full h-full object-cover"/>';
+  return '<div class="w-full h-full flex flex-col items-center justify-center gap-1 bg-gradient-to-br from-slate-200 to-slate-300 text-slate-500 ' + (f.bulanik ? 'blur-[2px] brightness-75' : '') + '">' + ui.svg('image', 'w-6 h-6') + '<span class="text-[9px] font-medium">' + f.yer + '</span></div>';
+}
+function mesafeKutu() {
+  var b = hatSecim ? hatSecim.v : null;
+  if (b === '6-7.5') return '<div class="mt-2 rounded-lg border border-[#E0E7FF] bg-[#EEF2FF] px-2.5 py-2 text-[11px] text-slate-700">Tahmini mesafe <b>6–8 m</b> · beyanınızla uyumlu.</div>';
+  var beyan = hatSecim ? hatSecim.l : 'henüz beyan edilmedi';
+  return '<div class="mt-2 rounded-lg border border-amber-200 bg-amber-50 px-2.5 py-2 text-[11px] text-amber-900"><b>Tahmini mesafe 6–8 m</b> · beyanınız (' + beyan + ') ile uyuşmuyor, lütfen kontrol edin. Gerekirse şerit metre ile ölçüp fotoğraflayın.</div>';
+}
+function fotoEkle() {
+  if (sira >= KUYRUK.length) { ui.toast('Demo: "Pompa ayağı zemini" fotoğrafı senaryo gereği eksik bırakıldı'); return; }
+  var f = KUYRUK[sira++];
+  var kart = document.createElement('div');
+  kart.className = 'bg-white rounded-2xl p-3 shadow-sm border border-slate-100 flex gap-3';
+  kart.innerHTML =
+    '<div class="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-slate-200">' + gorselHtml(f) +
+    '<div data-tara class="absolute inset-0 bg-[#4338CA]/20"><div class="tarayici absolute left-0 right-0 h-0.5 bg-[#818CF8] shadow-[0_0_10px_2px_rgba(99,102,241,.8)]"></div></div></div>' +
+    '<div data-sonuc class="min-w-0 flex-1 flex flex-col justify-center"><span class="nabiz inline-flex items-center gap-1.5 text-xs font-semibold text-[#4338CA]">' + ui.svg('sparkle', 'w-3.5 h-3.5') + 'YZ inceliyor…</span><span class="mt-1 text-[11px] text-slate-400">Tür, kalite, konum ve riskler</span></div>';
+  var liste = document.getElementById('foto-liste');
+  liste.insertBefore(kart, liste.firstChild);
+  setTimeout(function () {
+    kart.querySelector('[data-tara]').remove();
+    var s = kart.querySelector('[data-sonuc]');
+    s.className = 'min-w-0 flex-1';
+    if (f.bulanik) {
+      s.innerHTML = '<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full">' + ui.svg('x-circle', 'w-3 h-3') + 'Kullanılamaz</span>' +
+        '<p class="mt-1.5 text-xs text-slate-700">Görsel bulanık ve karanlık; hangi tür olduğu anlaşılamadı. Lütfen ışık alan bir açıdan yeniden çekin.</p>' +
+        '<button type="button" data-yeniden class="mt-2 h-9 px-3 rounded-lg border border-slate-200 text-xs font-medium text-slate-700 inline-flex items-center gap-1.5">' + ui.svg('camera', 'w-3.5 h-3.5') + 'Yeniden çek</button>';
+      s.querySelector('[data-yeniden]').addEventListener('click', function () { kart.remove(); ui.toast('Kullanılamaz fotoğraf kaldırıldı'); fotoEkle(); });
+      return;
+    }
+    tamam[f.tur] = true; turCiz();
+    s.innerHTML =
+      '<div class="flex flex-wrap items-center gap-1.5"><span class="inline-flex items-center gap-1 text-[11px] font-semibold text-[#4338CA] bg-[#E0E7FF] px-2 py-0.5 rounded-full">' + ui.svg('sparkle', 'w-3 h-3') + turAd(f.tur) + '</span>' +
+      '<button type="button" data-toast="YZ yanlış tanıdıysa türü elle seçebilirsiniz" class="text-[11px] text-slate-400 underline">değiştir</button></div>' +
+      '<ul class="mt-1.5 space-y-0.5 text-[11px] text-slate-600">' + f.tespit.map(function (t) { return '<li class="flex gap-1.5"><span class="text-slate-300">•</span>' + t + '</li>'; }).join('') + '</ul>' +
+      (f.mesafe ? mesafeKutu() : '') +
+      '<div class="mt-2 flex flex-wrap gap-1.5 text-[10px] font-medium"><span class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">' + ui.svg('pin', 'w-3 h-3') + 'Konum doğrulandı · şantiyeye 40 m</span><span class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">' + ui.svg('check', 'w-3 h-3') + 'Kalite iyi</span></div>';
+  }, 1500);
+}
+document.getElementById('foto-ekle').addEventListener('click', fotoEkle);
+document.getElementById('foto-yukle').addEventListener('click', fotoEkle);
+
+var videoVar = false;
+document.getElementById('video-ekle').addEventListener('click', function () {
+  var k = document.getElementById('video-kart');
+  if (videoVar) { ui.toast('Video zaten eklendi'); return; }
+  videoVar = true;
+  k.classList.remove('hidden');
+  k.innerHTML =
+    '<div class="flex gap-3"><div class="relative w-28 h-20 rounded-xl overflow-hidden bg-slate-800 shrink-0"><img src="assets/foto-hat-sokak.jpg" alt="" class="w-full h-full object-cover opacity-70"/>' +
+    '<span class="absolute inset-0 flex items-center justify-center text-white">' + ui.svg('video', 'w-6 h-6') + '</span><span class="absolute bottom-1 right-1 text-[10px] font-semibold text-white bg-black/60 px-1 rounded tnum">0:48</span>' +
+    '<div data-tara class="absolute inset-0 bg-[#4338CA]/20"><div class="tarayici absolute left-0 right-0 h-0.5 bg-[#818CF8] shadow-[0_0_10px_2px_rgba(99,102,241,.8)]"></div></div></div>' +
+    '<div data-vsonuc class="min-w-0 flex-1 flex flex-col justify-center"><span class="nabiz inline-flex items-center gap-1.5 text-xs font-semibold text-[#4338CA]">' + ui.svg('sparkle', 'w-3.5 h-3.5') + 'YZ videoyu inceliyor…</span><span class="mt-1 text-[11px] text-slate-400">Kritik kareler çıkarılıyor</span></div></div>';
+  setTimeout(function () {
+    k.querySelector('[data-tara]').remove();
+    var s = k.querySelector('[data-vsonuc]');
+    s.className = 'min-w-0 flex-1';
+    s.innerHTML = '<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-[#4338CA] bg-[#E0E7FF] px-2 py-0.5 rounded-full">' + ui.svg('sparkle', 'w-3 h-3') + '3 kritik kare çıkarıldı</span>' +
+      '<p class="mt-1 text-[11px] text-slate-500">48 sn · konum doğrulandı · tesis şefine özet olarak gösterilecek</p>';
+    var kareler = document.createElement('div');
+    kareler.className = 'mt-3 grid grid-cols-3 gap-2';
+    kareler.innerHTML = [['assets/foto-hat-bina.jpg', '50% 10%', '0:12 · hat geçişi'], ['assets/foto-hat-bina.jpg', '60% 85%', '0:27 · kurulum alanı'], ['assets/foto-hat-sokak.jpg', '50% 70%', '0:41 · mikser girişi']].map(function (x) {
+      return '<div><div class="aspect-video rounded-lg overflow-hidden"><img src="' + x[0] + '" alt="" class="w-full h-full object-cover" style="object-position:' + x[1] + '"/></div><div class="mt-1 text-[10px] text-slate-500 tnum">' + x[2] + '</div></div>';
+    }).join('');
+    k.appendChild(kareler);
+  }, 1800);
+});
+
+// ================= Kroki =================
+var ARAC = [
+  ['pompa', 'Pompa', 'bg-slate-900 text-white', 'P'], ['mikser', 'Mikser', 'bg-sky-500 text-white', 'M'], ['dokum', 'Döküm', 'bg-emerald-500 text-white', 'D'],
+  ['direk', 'Direk', 'bg-rose-500 text-white', '⚡'], ['kazi', 'Kazı', 'bg-amber-500 text-white', 'K'],
+];
+var arac = 'pompa', ogeler = [];
+document.getElementById('araclar').innerHTML = ARAC.map(function (a) {
+  return '<button type="button" data-arac="' + a[0] + '" class="h-14 rounded-xl border-2 border-slate-200 flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold text-slate-600"><span class="w-6 h-6 rounded-full ' + a[2] + ' text-[10px] font-bold flex items-center justify-center">' + a[3] + '</span>' + a[1] + '</button>';
+}).join('');
+function aracSec(v) {
+  arac = v;
+  document.querySelectorAll('[data-arac]').forEach(function (b) { var on = b.getAttribute('data-arac') === v; b.classList.toggle('border-slate-900', on); b.classList.toggle('bg-[#EEF2FF]', on); b.classList.toggle('border-slate-200', !on); });
+}
+aracSec('pompa');
+document.getElementById('araclar').addEventListener('click', function (e) { var b = e.target.closest('[data-arac]'); if (b) aracSec(b.getAttribute('data-arac')); });
+var kroki = document.getElementById('kroki');
+function ogeKoy(tur, x, y) {
+  var a = ARAC.filter(function (q) { return q[0] === tur; })[0];
+  var el = document.createElement('div');
+  el.className = 'absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none';
+  el.style.left = x + '%'; el.style.top = y + '%';
+  el.innerHTML = '<span class="w-8 h-8 rounded-full ' + a[2] + ' text-xs font-bold flex items-center justify-center ring-4 ring-white shadow">' + a[3] + '</span><span class="mt-0.5 text-[10px] font-semibold text-slate-700 bg-white/90 px-1 rounded">' + a[1] + '</span>';
+  kroki.appendChild(el); ogeler.push(el); krokiSayac();
+}
+function krokiSayac() { document.getElementById('kroki-sayac').textContent = ogeler.length ? ogeler.length + ' öğe yerleştirildi' : 'Henüz öğe yok'; }
+kroki.addEventListener('click', function (e) {
+  var r = kroki.getBoundingClientRect();
+  ogeKoy(arac, ((e.clientX - r.left) / r.width * 100).toFixed(1), ((e.clientY - r.top) / r.height * 100).toFixed(1));
+});
+document.getElementById('kroki-geri').addEventListener('click', function () { var o = ogeler.pop(); if (o) o.remove(); krokiSayac(); });
+document.getElementById('kroki-temizle').addEventListener('click', function () { ogeler.forEach(function (o) { o.remove(); }); ogeler = []; krokiSayac(); });
+document.getElementById('kroki-demo').addEventListener('click', function () {
+  document.getElementById('kroki-temizle').click();
+  ogeKoy('pompa', 50, 62); ogeKoy('dokum', 40, 30); ogeKoy('mikser', 80, 82); ogeKoy('direk', 12, 8); ogeKoy('direk', 90, 11);
+});
+var elleVar = false;
+document.getElementById('elle-yukle').addEventListener('click', function () {
+  var s = document.getElementById('elle-sonuc');
+  s.classList.remove('hidden');
+  s.innerHTML = '<div class="relative h-44 rounded-xl overflow-hidden bg-[#FFFDF5] border border-slate-200">' +
+    '<svg viewBox="0 0 300 170" class="absolute inset-0 w-full h-full"><g fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round"><path d="M50 30 l100 3 l-2 70 l-99 -2 z"/><path d="M0 130 C80 126 200 134 300 128"/><path d="M5 12 C100 18 200 20 295 24" stroke-dasharray="6 5"/><circle cx="190" cy="90" r="10"/><path d="M240 140 l25 0"/></g><g font-family="Comic Sans MS, cursive" font-size="11" fill="#334155"><text x="75" y="70">B BLOK</text><text x="180" y="115">pompa</text><text x="230" y="158">mikser</text><text x="200" y="12">hat!</text></g></svg>' +
+    '<div data-tara class="absolute inset-0 bg-[#4338CA]/10"><div class="tarayici absolute left-0 right-0 h-0.5 bg-[#818CF8] shadow-[0_0_10px_2px_rgba(99,102,241,.8)]"></div></div></div>' +
+    '<div data-esonuc class="mt-3 nabiz inline-flex items-center gap-1.5 text-xs font-semibold text-[#4338CA]">' + ui.svg('sparkle', 'w-3.5 h-3.5') + 'YZ krokiyi dijitalleştiriyor…</div>';
+  setTimeout(function () {
+    s.querySelector('[data-tara]').remove();
+    var r = s.querySelector('[data-esonuc]');
+    r.className = 'mt-3 rounded-xl border border-[#E0E7FF] bg-[#EEF2FF] p-3';
+    r.innerHTML = '<div class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#4338CA]">' + ui.svg('sparkle', 'w-3 h-3') + 'YZ dijitalleştirdi · 5 öğe tanındı</div>' +
+      '<ul class="mt-1.5 grid grid-cols-2 gap-1 text-[11px] text-slate-700"><li>• Bina (B Blok)</li><li>• Pompa konumu</li><li>• Mikser bekleme alanı</li><li>• Havai hat</li><li>• Yol (1203 Sk.)</li><li class="text-amber-700">• Döküm noktası belirsiz</li></ul>' +
+      '<button type="button" data-toast="Tanınan öğeler harita krokisine aktarıldı (demo)" class="mt-2 h-9 px-3 rounded-lg bg-slate-900 text-white text-[11px] font-medium">Haritaya aktar</button>';
+    elleVar = true;
+  }, 1600);
+});
+
+// ================= Sonuç =================
+document.querySelectorAll('input[name="sonuc"]').forEach(function (r) {
+  r.addEventListener('change', function () { document.getElementById('tedbir-alan').classList.toggle('hidden', r.value !== 'tedbir' || !r.checked); });
+});
+
+// ================= OTP / İmza =================
+function otpKur(k) {
+  var ins = k.querySelectorAll('input');
+  ins.forEach(function (inp, i) {
+    inp.addEventListener('input', function () { inp.value = inp.value.replace(/\D/g, '').slice(-1); if (inp.value && ins[i + 1]) ins[i + 1].focus(); });
+    inp.addEventListener('keydown', function (e) { if (e.key === 'Backspace' && !inp.value && ins[i - 1]) ins[i - 1].focus(); });
+    inp.addEventListener('paste', function (e) { var t = (e.clipboardData.getData('text') || '').replace(/\D/g, '').slice(0, 6); if (t) { e.preventDefault(); t.split('').forEach(function (c, j) { if (ins[j]) ins[j].value = c; }); } });
+  });
+}
+function otpDolu(k) { return Array.prototype.every.call(k.querySelectorAll('input'), function (i) { return i.value; }); }
+function otpDoldur(k) { k.querySelectorAll('input').forEach(function (i, j) { i.value = '731845'[j]; }); }
+otpKur(document.getElementById('otp-giris')); otpKur(document.getElementById('otp-imza'));
+function imzaKur(cv) {
+  if (cv._kuruldu) return;
+  var r = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+  cv.width = r.width * d; cv.height = r.height * d;
+  var c = cv.getContext('2d'); c.scale(d, d);
+  c.lineWidth = 2.2; c.lineCap = 'round'; c.lineJoin = 'round'; c.strokeStyle = '#0F172A';
+  var ciz = false, son, ip = cv.parentElement.querySelector('[data-imza-ipucu]');
+  function p(e) { var b = cv.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; }
+  cv.addEventListener('pointerdown', function (e) { ciz = true; son = p(e); cv.setPointerCapture(e.pointerId); cv.dataset.dolu = '1'; ip.classList.add('hidden'); });
+  cv.addEventListener('pointermove', function (e) { if (!ciz) return; var q = p(e); c.beginPath(); c.moveTo(son[0], son[1]); c.lineTo(q[0], q[1]); c.stroke(); son = q; });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (t) { cv.addEventListener(t, function () { ciz = false; }); });
+  cv._temizle = function () { c.clearRect(0, 0, cv.width, cv.height); cv.dataset.dolu = ''; ip.classList.remove('hidden'); };
+  cv._kuruldu = true;
+}
+
+// ================= Sihirbaz =================
+var ADLAR = ['Doğrulama', 'Döküm şekli', 'Kontrol maddeleri', 'Havai elektrik hattı', 'Fotoğraf ve video', 'Kroki', 'Sonuç ve imza', 'Tamamlandı'];
+var TOPLAM = 8, adim = 1;
+function goster(n) {
+  adim = n;
+  document.querySelectorAll('[data-adim]').forEach(function (s) { s.classList.toggle('hidden', +s.getAttribute('data-adim') !== n); });
+  document.getElementById('adim-no').textContent = n;
+  document.getElementById('adim-ad').textContent = ADLAR[n - 1];
+  document.getElementById('ilerleme').style.width = (n / TOPLAM * 100) + '%';
+  document.getElementById('geri').classList.toggle('hidden', n === 1 || n === TOPLAM);
+  document.getElementById('gezinme').classList.toggle('hidden', n === TOPLAM);
+  document.getElementById('ileri-yazi').textContent = n === 1 ? 'Doğrula ve başla' : n === 7 ? 'SMS ile imzala ve gönder' : 'Devam';
+  if (n === 3) maddeGorunurluk();
+  if (n === 7) imzaKur(document.getElementById('imza'));
+  if (n === TOPLAM) ozetCiz();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function dogrula(n) {
+  if (n === 1) {
+    if (!otpDolu(document.getElementById('otp-giris'))) return '6 haneli kodu girin (demo: "kodu doldur")';
+    if (!document.getElementById('kvkk-onay').checked) return 'KVKK aydınlatma metnini onaylayın';
+  }
+  if (n === 3) {
+    var a = aktifMaddeler();
+    var bos = a.filter(function (no) { return !cevap[no]; });
+    if (bos.length) return bos.length + ' madde yanıtlanmadı (demo: "senaryo yanıtları")';
+    var aciksiz = a.filter(function (no) { return riskli(no) && !document.querySelector('[data-aciklama-alan="' + no + '"]').value.trim(); });
+    if (aciksiz.length) return aciksiz.join(', ') + ' numaralı madde için açıklama zorunlu';
+  }
+  if (n === 4) {
+    if (!hatSecim) return 'En yakın havai hat mesafesini seçin';
+    if (!cevap.hat) return '"Kriterler sağlandı mı" sorusunu yanıtlayın';
+    if (cevap.hat === 'H' && !document.querySelector('[data-aciklama-alan="hat"]').value.trim()) return '"Hayır" cevabı için açıklama yazın';
+  }
+  if (n === 5 && Object.keys(tamam).length === 0) return 'En az bir fotoğraf ekleyin';
+  if (n === 6 && ogeler.length === 0 && !elleVar) return 'Krokiye en az bir öğe yerleştirin veya kroki fotoğrafı ekleyin';
+  if (n === 7) {
+    var s = document.querySelector('input[name="sonuc"]:checked');
+    if (!s) return 'Lütfen bir sonuç seçin';
+    if (s.value === 'tedbir' && !document.getElementById('tedbir').value.trim()) return 'Alınacak ilave tedbirleri yazın';
+    if (!document.getElementById('taahhut-onay').checked) return 'Taahhüdü onaylayın';
+    if (Array.prototype.some.call(document.querySelectorAll('[data-imza-alan]'), function (i) { return !i.value.trim(); })) return 'Firma, ad soyad ve görev alanlarını doldurun';
+    if (!document.getElementById('imza').dataset.dolu) return 'Lütfen imza alanına imzalayın';
+  }
+  return null;
+}
+function eksikTurler() { return TURLER.filter(function (t) { return !tamam[t[0]]; }).map(function (t) { return t[1]; }); }
+document.getElementById('ileri').addEventListener('click', function () {
+  var h = dogrula(adim);
+  if (h) { ui.toast(h); return; }
+  if (adim === 7) {
+    var e = eksikTurler();
+    if (e.length) { document.getElementById('eksik-metin').textContent = e.join(', '); ui.ac('zemin-modal'); return; }
+    ui.ac('sms-modal'); return;
+  }
+  goster(adim + 1);
+});
+document.getElementById('geri').addEventListener('click', function () { if (adim > 1) goster(adim - 1); });
+document.getElementById('zemin-git').addEventListener('click', function () { document.getElementById('zemin-modal').classList.add('hidden'); goster(5); });
+document.getElementById('zemin-gec').addEventListener('click', function () { document.getElementById('zemin-modal').classList.add('hidden'); ui.ac('sms-modal'); });
+document.getElementById('sms-onayla').addEventListener('click', function () {
+  if (!otpDolu(document.getElementById('otp-imza'))) { ui.toast('6 haneli kodu girin (demo: "kodu doldur")'); return; }
+  document.getElementById('sms-modal').classList.add('hidden');
+  goster(TOPLAM);
+});
+function ozetCiz() {
+  var li = [], e = eksikTurler();
+  li.push('<li class="flex gap-2"><span class="text-[#4338CA]">•</span><span><b class="font-semibold">' + (6 - e.length) + ' / 6</b> zorunlu fotoğraf türü' + (videoVar ? ', 1 video' : '') + ' ve kroki alındı.</span></li>');
+  if (e.length) li.push('<li class="flex gap-2"><span class="text-amber-600">•</span><span>Eksik: <b class="font-semibold">' + e.join(', ') + '</b></span></li>');
+  if (tamam.birlikte && (!hatSecim || hatSecim.v !== '6-7.5')) li.push('<li class="flex gap-2"><span class="text-amber-600">•</span><span>Hat mesafesi beyanınız (' + (hatSecim ? hatSecim.l : '—') + ') ile fotoğraf tahmini (6–8 m) arasında fark işaretlendi.</span></li>');
+  var u = document.getElementById('ozet-liste'); u.innerHTML = li.join('');
+}
+</script>
+</body>
+</html>

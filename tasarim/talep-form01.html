@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sevkiyat Değerlendirmesi</title>
+<script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms"></script>
+<script src="assets/kabuk.js"></script>
+</head>
+<body>
+<main data-kabuk="ic" data-menu="talepler" class="flex-1 p-4 md:p-6 lg:p-7 space-y-5">
+
+<section class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+  <div class="flex flex-wrap items-start justify-between gap-4">
+    <div class="min-w-0">
+      <nav aria-label="Konum" class="flex items-center space-x-1.5 text-xs text-slate-400"><a class="hover:text-slate-900" href="pano.html">Pano</a><span>/</span><a class="hover:text-slate-900" href="talepler.html">Talepler</a><span>/</span><a class="hover:text-slate-900 font-mono" href="talep-detay.html">ŞNT-2026-0418</a><span>/</span><span class="text-slate-600 font-medium">Form 01</span></nav>
+      <h2 class="mt-1.5 text-2xl font-bold tracking-tight text-slate-900">Şantiye sevkiyat değerlendirmesi</h2>
+      <p class="mt-1 text-xs text-slate-500">Çimbeton Tesis Yetkilisi Şantiye Sevkiyat Değerlendirme Formu · Beton dökümü öncesi risk değerlendirme ve şantiye sevkiyat onayı</p>
+    </div>
+    <div class="flex flex-wrap items-center gap-2">
+      <a href="talep-detay.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-600 hover:bg-slate-50"><i data-ikon="arrow-l" class="w-3.5 h-3.5"></i>Talebe dön</a>
+      <button data-toast="Form 01 PDF önizlemesi (orijinal form düzeninde)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-600 hover:bg-slate-50"><i data-ikon="eye" class="w-3.5 h-3.5"></i>PDF önizle</button>
+    </div>
+  </div>
+
+  <!-- İlave bilgi geldi bandı -->
+  <div class="mt-4 grid md:grid-cols-[1fr_auto] gap-3 items-center rounded-xl bg-emerald-50 border border-emerald-100 px-4 py-3">
+    <div class="flex items-start gap-3">
+      <span class="w-8 h-8 rounded-lg bg-white text-emerald-600 flex items-center justify-center shrink-0"><i data-ikon="inbox" class="w-4 h-4"></i></span>
+      <div class="text-xs text-emerald-900">
+        <b class="font-semibold">İlave bilgi alındı · 19.11.2026 11:30</b>
+        <ul class="mt-1 space-y-0.5 text-emerald-800">
+          <li>• Kemal Aydın: şerit metre ile ölçüm fotoğrafı, hat ile pompa ayağı arası <b>8,2 m</b>. Form 02 m.3 "Hayır" olarak düzeltildi.</li>
+          <li>• Serkan Demir: pompa ayağı zemini fotoğrafı (sıkıştırılmış stabilize), güncel kroki (bom ters cephede) ve bariyerleme planı</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 md:pl-4 md:border-l border-emerald-200">
+      <div class="text-center"><div class="text-[10px] text-slate-400 uppercase tracking-wide">İlk analiz</div><div class="text-lg font-bold text-rose-500 line-through decoration-2 tnum">78</div></div>
+      <i data-ikon="arrow-r" class="w-4 h-4 text-slate-400"></i>
+      <div class="text-center"><div class="text-[10px] text-[#4338CA] uppercase tracking-wide font-semibold">✦ Güncel</div><div class="text-lg font-bold text-amber-600 tnum">46</div></div>
+      <span class="inline-flex text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Orta</span>
+    </div>
+  </div>
+</section>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+<div class="lg:col-span-8 min-w-0 space-y-5">
+
+  <!-- Proje bilgileri -->
+  <section class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="text-[11px] font-semibold uppercase tracking-wide text-slate-400 mb-3">Proje bilgileri</div>
+    <dl class="grid sm:grid-cols-2 gap-x-6 gap-y-2.5 text-xs">
+      <div class="flex justify-between gap-3 border-b border-slate-50 pb-2"><dt class="text-slate-400">Santral adı</dt><dd class="font-medium text-slate-800">Kemalpaşa Santrali</dd></div>
+      <div class="flex justify-between gap-3 border-b border-slate-50 pb-2"><dt class="text-slate-400">Değerlendirme tarihi</dt><dd class="font-medium text-slate-800">19.11.2026</dd></div>
+      <div class="flex justify-between gap-3 border-b border-slate-50 pb-2"><dt class="text-slate-400">Şantiye adı</dt><dd class="font-medium text-slate-800">Yıldız Konutları B Blok</dd></div>
+      <div class="flex justify-between gap-3 border-b border-slate-50 pb-2"><dt class="text-slate-400">Bayii / Müşteri</dt><dd class="font-medium text-slate-800">Ege Yapı İnşaat Ltd. Şti.</dd></div>
+      <div class="flex justify-between gap-3 border-b border-slate-50 pb-2"><dt class="text-slate-400">Şantiye adresi</dt><dd class="font-medium text-slate-800 text-right">Ulucak Mah. 1203 Sk. No:14, Kemalpaşa</dd></div>
+      <div class="flex justify-between gap-3 border-b border-slate-50 pb-2"><dt class="text-slate-400">Mesafe</dt><dd class="font-medium text-slate-800 tnum">14,2 km</dd></div>
+      <div class="flex justify-between gap-3"><dt class="text-slate-400">Şantiye yetkilisi</dt><dd class="font-medium text-slate-800 text-right">Kemal Aydın · 0532 *** 41 27</dd></div>
+      <div class="flex justify-between gap-3"><dt class="text-slate-400">Döküm şekli</dt><dd class="font-medium text-slate-800">☑ Pompalı döküm</dd></div>
+    </dl>
+  </section>
+
+  <!-- Madde bölümleri (JS) -->
+  <div id="bolumler" class="space-y-5"></div>
+
+  <!-- Değerlendirme ve karar -->
+  <section class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 space-y-5">
+    <div>
+      <div class="flex items-center justify-between gap-2 mb-2"><span class="text-[11px] font-semibold uppercase tracking-wide text-slate-400">Diğer</span></div>
+      <textarea rows="2" class="w-full rounded-xl border-slate-200 text-sm focus:border-[#6366F1] focus:ring-[#6366F1]/20" placeholder="Formda yer almayan diğer tespitler…">Mikser güzergahında park halindeki araçlar nedeniyle manevra alanı dar; döküm günü şantiye önünde park kısıtı uygulanacak.</textarea>
+    </div>
+    <div>
+      <div class="flex items-center justify-between gap-2 mb-2"><span class="text-[11px] font-semibold uppercase tracking-wide text-slate-400">Değerlendirme</span><span class="inline-flex items-center gap-1 text-[10px] font-semibold text-[#4338CA] bg-[#E0E7FF] px-1.5 py-0.5 rounded"><i data-ikon="sparkle" class="w-3 h-3"></i>öneri: Uygunsuzluk bulunmadı</span></div>
+      <div class="grid sm:grid-cols-3 gap-2">
+        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 cursor-pointer has-[:checked]:border-slate-900 has-[:checked]:bg-[#E0E7FF]/40"><input type="radio" name="deg" checked class="border-slate-300 text-slate-900 focus:ring-[#6366F1]"/><span class="text-xs font-medium text-slate-800">Uygunsuzluk bulunmadı</span></label>
+        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 cursor-pointer has-[:checked]:border-slate-900 has-[:checked]:bg-[#E0E7FF]/40"><input type="radio" name="deg" class="border-slate-300 text-slate-900 focus:ring-[#6366F1]"/><span class="text-xs font-medium text-slate-800">İlave bilgi – belge talep edildi</span></label>
+        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 cursor-pointer has-[:checked]:border-slate-900 has-[:checked]:bg-[#E0E7FF]/40"><input type="radio" name="deg" class="border-slate-300 text-slate-900 focus:ring-[#6366F1]"/><span class="text-xs font-medium text-slate-800">Beton sevkiyatı reddedildi</span></label>
+      </div>
+    </div>
+    <div>
+      <div class="flex items-center justify-between gap-2 mb-2"><span class="text-[11px] font-semibold uppercase tracking-wide text-slate-400">İlave tedbirler / notlar</span><span class="inline-flex items-center gap-1 text-[10px] font-semibold text-[#4338CA] bg-[#E0E7FF] px-1.5 py-0.5 rounded"><i data-ikon="sparkle" class="w-3 h-3"></i>bulgulardan önerildi</span></div>
+      <div class="flex flex-wrap gap-2 mb-3" id="tedbirler"></div>
+      <textarea id="tedbir-metin" rows="4" class="w-full rounded-xl border-slate-200 text-sm focus:border-[#6366F1] focus:ring-[#6366F1]/20"></textarea>
+    </div>
+  </section>
+</div>
+
+<!-- Sağ: karar paneli -->
+<aside class="lg:col-span-4 space-y-5 lg:sticky lg:top-20">
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="text-sm font-semibold text-slate-900">İnceleme ilerlemesi</div>
+    <p class="text-[11px] text-slate-400 mt-0.5">YZ ve sistem 15 maddenin tamamını önerdi. Her öneriyi kabul etmeniz ya da değiştirmeniz gerekiyor.</p>
+    <div class="mt-3 flex items-baseline gap-1"><span id="sayac" class="text-2xl font-bold tracking-tight text-slate-900 tnum">0</span><span class="text-sm text-slate-400">/ 15 madde</span></div>
+    <div class="mt-2 w-full bg-slate-100 h-1.5 rounded-full overflow-hidden"><div id="cubuk" class="bg-slate-900 h-full rounded-full transition-all" style="width:0%"></div></div>
+    <div class="mt-3 grid grid-cols-2 gap-2 text-[11px]">
+      <div class="rounded-lg bg-slate-50 px-2.5 py-2"><span class="text-slate-400">Kabul edilen</span><b id="s-kabul" class="block text-slate-900 text-sm tnum">0</b></div>
+      <div class="rounded-lg bg-slate-50 px-2.5 py-2"><span class="text-slate-400">Değiştirilen</span><b id="s-degis" class="block text-slate-900 text-sm tnum">0</b></div>
+    </div>
+    <button id="tumunu" class="mt-3 w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-700 hover:bg-slate-50"><i data-ikon="check" class="w-3.5 h-3.5"></i>Kalan önerileri gözden geçirdim, kabul et</button>
+  </div>
+
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="text-[11px] font-semibold uppercase tracking-wide text-slate-400 mb-2">Tesis yetkilisi kararı</div>
+    <div class="space-y-2">
+      <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 cursor-pointer has-[:checked]:border-emerald-500 has-[:checked]:bg-emerald-50"><input type="radio" name="karar" value="onay" checked class="border-slate-300 text-emerald-600 focus:ring-emerald-500"/><span class="text-sm font-semibold text-slate-800">Şantiye sevkiyatı onaylandı</span></label>
+      <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 cursor-pointer has-[:checked]:border-rose-500 has-[:checked]:bg-rose-50"><input type="radio" name="karar" value="red" class="border-slate-300 text-rose-600 focus:ring-rose-500"/><span class="text-sm font-semibold text-slate-800">Şantiye sevkiyatı reddedildi</span></label>
+    </div>
+    <dl class="mt-4 space-y-2 text-xs">
+      <div class="flex justify-between"><dt class="text-slate-400">Tesis yetkilisi</dt><dd class="font-medium text-slate-800">Murat Yıldız · Tesis Şefi</dd></div>
+      <div class="flex justify-between"><dt class="text-slate-400">Tarih</dt><dd class="font-medium text-slate-800">19.11.2026</dd></div>
+      <div class="flex justify-between"><dt class="text-slate-400">İmza</dt><dd class="font-medium text-slate-800">E-imza / SMS doğrulama</dd></div>
+    </dl>
+    <button id="gonder" data-ac="onay-modal" class="mt-4 w-full inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-slate-900 text-sm font-medium text-white shadow-sm shadow-slate-900/10 hover:bg-slate-800 disabled:opacity-40 disabled:cursor-not-allowed" disabled><i data-ikon="pen" class="w-4 h-4"></i>İmzala ve Bölge Müdürüne gönder</button>
+    <p id="gonder-not" class="mt-2 text-[11px] text-slate-400 text-center">Önce 15 maddenin tamamını gözden geçirin</p>
+  </div>
+
+  <div class="rounded-2xl border border-[#E0E7FF] bg-[#EEF2FF] p-4 text-[11px] text-[#3730A3] leading-relaxed">
+    <b class="font-semibold">✦ Karar sizde.</b> YZ yalnız öneri verir. Kabul ettiğiniz ve değiştirdiğiniz her madde, önerinin dayandığı kanıtla birlikte iz kaydına yazılır.
+  </div>
+</aside>
+</div>
+
+<!-- Onay modalı -->
+<div id="onay-modal" data-modal data-kapat-zemin class="hidden fixed inset-0 z-50 bg-slate-900/40 flex items-center justify-center p-4">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
+    <div id="m-1" class="p-6">
+      <div class="w-11 h-11 rounded-xl bg-slate-900 text-white flex items-center justify-center"><i data-ikon="pen" class="w-5 h-5"></i></div>
+      <h3 class="mt-4 text-lg font-bold text-slate-900">Formu imzalayın</h3>
+      <p class="mt-1 text-sm text-slate-600">Form 01 "Şantiye sevkiyatı onaylandı" kararıyla imzalanacak ve Bölge Müdürü <b>Aylin Korkmaz</b>'ın onayına gönderilecek.</p>
+      <label class="block mt-4 text-xs font-semibold text-slate-700">0532 *** 18 06 numarasına gönderilen kod</label>
+      <input value="482 913" class="mt-1 w-full rounded-xl border-slate-200 text-center tracking-[.4em] font-semibold text-lg focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      <div class="mt-5 flex gap-2 justify-end"><button data-kapat class="px-3 py-2 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-600">Vazgeç</button><button onclick="document.getElementById('m-1').classList.add('hidden');document.getElementById('m-2').classList.remove('hidden')" class="px-3 py-2 rounded-lg bg-slate-900 text-xs font-medium text-white">İmzala ve gönder</button></div>
+    </div>
+    <div id="m-2" class="hidden p-6 text-center">
+      <div class="mx-auto w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center"><i data-ikon="check" class="w-6 h-6"></i></div>
+      <h3 class="mt-4 text-lg font-bold text-slate-900">Bölge Müdürü onayına gönderildi</h3>
+      <p class="mt-1 text-sm text-slate-600">Aylin Korkmaz'a YZ'nin hazırladığı 5 satırlık özetle bildirim gitti. Durum: <b>Bölge müdürü onayında</b>.</p>
+      <div class="mt-5 flex gap-2 justify-center"><a href="pano.html" class="px-3 py-2 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-600">Panoya dön</a><a href="bolge-onay.html" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-900 text-xs font-medium text-white">Bölge müdürü ekranını gör<i data-ikon="arrow-r" class="w-3.5 h-3.5"></i></a></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// k: 'yz' | 'sis' (sistem kuralı)  ·  o: önerilen cevap  ·  kanit: dayanak  ·  not: ek açıklama
+var B = [
+  { ad:'Form kontrolü', alt:'Şantiye yetkilisi ve hizmet sağlayıcı beyanları ile görsel kayıtlara istinaden', m:[
+    { t:'Şantiye Yetkilisi İSG Uygunluk Beyan Formu mevcut mu?', o:'E', k:'sis', kanit:'Form 02 · 17.11 16:40 · güncelleme 19.11 11:24' },
+    { t:'Hizmet Sağlayıcı Şantiye Değerlendirme Formu mevcut mu?', o:'E', k:'sis', kanit:'Form 03 · 18.11 10:15 · güncelleme 19.11 11:30' },
+    { t:'Fotoğraflar mevcut mu?', o:'E', k:'yz', kanit:'6/6 zorunlu tür YZ ile sınıflandırıldı · zemin fotoğrafı 19.11\'de eklendi' },
+    { t:'Kroki mevcut mu?', o:'E', k:'sis', kanit:'Güncel kroki 19.11 · bom ters cephede' },
+    { t:'Video kaydı mevcut mu?', o:'E', k:'sis', kanit:'48 sn · konum doğrulandı' },
+    { t:'"Şantiye Yetkilisi İSG Uygunluk Beyan Formu" ve "Hizmet Sağlayıcı Şantiye Değerlendirme Formu" imzaları tam mı?', o:'E', k:'sis', kanit:'2/2 SMS doğrulamalı e-imza' } ]},
+  { ad:'Çapraz kontrol', alt:'YZ iki formu ve görsel kayıtları karşılaştırdı', m:[
+    { t:'Şantiye yetkilisi beyanı ile hizmet sağlayıcısı (mobil pompa operatörü veya firma yetkilisi) tespiti uyumlu mu?', o:'E', k:'yz', kanit:'İlk analizde 2 çelişki vardı; ilave bilgi ile giderildi', not:'Form 02 m.3 "Hayır · 8,2 m, ilave tedbir alınacak" olarak güncellendi.' },
+    { t:'Riskler, fotoğraf/video ile doğrulandı mı?', o:'E', k:'yz', kanit:'Hat, direk, malzeme istifi, dar yol fotoğrafta; ölçüm fotoğrafı 8,2 m' },
+    { t:'Havai elektrik enerji hat bilgileri iki formda tutarlı mı?', o:'E', k:'yz', kanit:'İki form da 7,5–10 m bandında; ölçüm 8,2 m · fotoğraf tahmini 6–8 m ile uyumlu' } ]},
+  { ad:'Kritik tehlikelerin değerlendirmesi', alt:'Cevaplar formlar, fotoğraflar, ölçüm ve hava durumundan önerildi', m:[
+    { t:'Havai elektrik hattı < 10 m mi?', o:'E', k:'yz', kanit:'Ölçüm 8,2 m (fotoğraf 1, ölçüm fotoğrafı)', risk:true },
+    { t:'Havai elektrik enerjisi kesme izni gerekli mi?', o:'H', k:'yz', kanit:'8,2 m > 7,5 m · ortak değerlendirme bandı; bom ters cephede açılacak', not:'Yağışta mesafe 2× olur (16,4 m gerekir) → yağışta döküm ertelenmeli.' },
+    { t:'Kazı kenarı/şev mevcut mu?', o:'H', k:'yz', kanit:'Genel görünüm ve pompa alanı fotoğraflarında kazı yok · Form 02 m.2, Form 03 m.2' },
+    { t:'Dolgu zemin var mı?', o:'H', k:'yz', kanit:'Zemin fotoğrafı: sıkıştırılmış stabilize, oturma izi yok' },
+    { t:'Yeraltı altyapı riski var mı?', o:'H', k:'yz', kanit:'Form 02 m.1 + Form 03 m.5 · en yakın menhol 4 m, ayak açılımı dışında' },
+    { t:'Gece dökümü olacak mı?', o:'H', k:'sis', kanit:'İlk döküm 21.11.2026 08:00' } ]}
+];
+var durum = {}; // id -> 'kabul' | 'degis'
+var cevap = {};
+
+function satir(bi, mi, x){
+  var id = bi+'-'+mi; var c = cevap[id] || x.o; var d = durum[id];
+  var etiket = x.k==='yz'
+    ? '<span class="inline-flex items-center gap-1 text-[10px] font-semibold text-[#4338CA] bg-[#E0E7FF] px-1.5 py-0.5 rounded">'+ui.svg('sparkle','w-3 h-3')+'YZ</span>'
+    : '<span class="inline-flex items-center gap-1 text-[10px] font-semibold text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded">'+ui.svg('check','w-3 h-3')+'Sistem</span>';
+  function seg(v, ad){
+    var on = c===v; var oneri = x.o===v;
+    var cls = on ? (v==='E' ? (x.risk?'bg-amber-500 text-white':'bg-slate-900 text-white') : 'bg-slate-900 text-white') : 'text-slate-500 hover:bg-slate-100';
+    return '<button onclick="sec(\''+id+'\',\''+v+'\')" class="relative w-16 py-1.5 rounded-md text-xs font-semibold '+cls+'">'+ad+(oneri&&!on?'<span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#6366F1]"></span>':'')+'</button>';
+  }
+  var sag = d==='kabul' ? '<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600">'+ui.svg('check-circle','w-3.5 h-3.5')+'Kabul</span>'
+          : d==='degis' ? '<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-700">'+ui.svg('edit','w-3.5 h-3.5')+'Değiştirildi</span>'
+          : '<button onclick="kabul(\''+id+'\')" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md border border-slate-200 bg-white text-[11px] font-medium text-slate-700 hover:border-slate-900">'+ui.svg('check','w-3 h-3')+'Kabul</button>';
+  var degisNot = d==='degis' ? '<div class="mt-2"><input class="w-full rounded-lg border-amber-200 bg-amber-50/50 text-xs focus:border-amber-400 focus:ring-amber-200" placeholder="Değişiklik gerekçesi (iz kaydına yazılır)…"/></div>' : '';
+  return '<li class="py-3.5 '+(d?'':'bg-[#EEF2FF]/30 -mx-5 px-5')+'">'+
+    '<div class="flex flex-col sm:flex-row sm:items-start gap-3">'+
+      '<span class="w-6 text-xs font-semibold text-slate-400 tnum pt-0.5">'+(mi+1)+'</span>'+
+      '<div class="flex-1 min-w-0"><p class="text-sm text-slate-800">'+x.t+'</p>'+
+        '<div class="mt-1.5 flex flex-wrap items-center gap-1.5">'+etiket+'<span class="text-[11px] text-slate-500">'+x.kanit+'</span></div>'+
+        (x.not?'<p class="mt-1 text-[11px] text-[#4338CA]">'+x.not+'</p>':'')+degisNot+'</div>'+
+      '<div class="flex items-center gap-3 sm:pl-2"><div class="flex gap-0.5 p-0.5 rounded-lg bg-slate-50 border border-slate-100">'+seg('E','Evet')+seg('H','Hayır')+'</div><div class="w-24 text-right">'+sag+'</div></div>'+
+    '</div></li>';
+}
+function ciz(){
+  document.getElementById('bolumler').innerHTML = B.map(function(b,bi){
+    return '<section class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100"><div class="flex flex-wrap items-center justify-between gap-2"><div><div class="text-[11px] font-semibold uppercase tracking-wide text-slate-400">'+b.ad+'</div><div class="text-[11px] text-slate-400 mt-0.5">'+b.alt+'</div></div><div class="flex items-center gap-3 text-[10px] text-slate-400"><span class="hidden sm:inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#6366F1]"></span>önerilen</span><span class="text-[10px] font-semibold uppercase tracking-wide text-slate-400 w-[8.5rem] text-center hidden sm:block">Evet / Hayır</span></div></div><ul class="mt-2 divide-y divide-slate-100">'+b.m.map(function(x,mi){return satir(bi,mi,x);}).join('')+'</ul></section>';
+  }).join('');
+  var k=0,dg=0; Object.keys(durum).forEach(function(i){ durum[i]==='kabul'?k++:dg++; });
+  var t=k+dg;
+  document.getElementById('sayac').textContent=t; document.getElementById('cubuk').style.width=(t/15*100)+'%';
+  document.getElementById('s-kabul').textContent=k; document.getElementById('s-degis').textContent=dg;
+  var g=document.getElementById('gonder'); g.disabled = t<15;
+  document.getElementById('gonder-not').textContent = t<15 ? ('Önce 15 maddenin tamamını gözden geçirin · '+(15-t)+' kaldı') : 'Hazır · imza SMS ile doğrulanır';
+}
+function kabul(id){ durum[id]='kabul'; ciz(); }
+function sec(id,v){ var p=id.split('-'); var o=B[p[0]].m[p[1]].o; cevap[id]=v; durum[id]= v===o ? 'kabul' : 'degis'; ciz(); }
+
+var T = [['İşaretçi bulundurulacak',1],['Hat tarafına bariyer şeridi çekilecek',1],['Bom, hattın ters cephesinde (sokak tarafı) açılacak',1],['Yağış halinde döküm ertelenecek',1],['Döküm günü şantiye önünde park kısıtı',0],['Döküm öncesi pompa operatörü ile saha brifingi',0]];
+function tedbirCiz(){
+  document.getElementById('tedbirler').innerHTML = T.map(function(x,i){
+    return '<button onclick="T['+i+'][1]=1-T['+i+'][1];tedbirCiz()" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs font-medium border '+(x[1]?'bg-slate-900 text-white border-slate-900':'bg-white text-slate-600 border-slate-200 hover:border-slate-400')+'">'+ui.svg(x[1]?'check':'plus','w-3 h-3')+x[0]+'</button>';
+  }).join('');
+  document.getElementById('tedbir-metin').value = T.filter(function(x){return x[1];}).map(function(x,i){return (i+1)+'. '+x[0]+'.';}).join('\n');
+}
+document.addEventListener('DOMContentLoaded', function(){
+  ciz(); tedbirCiz();
+  document.getElementById('tumunu').addEventListener('click', function(){ B.forEach(function(b,bi){ b.m.forEach(function(x,mi){ var id=bi+'-'+mi; if(!durum[id]) durum[id]='kabul'; }); }); ciz(); ui.toast('Kalan öneriler kabul edildi · iz kaydına "toplu kabul" olarak yazıldı'); });
+});
+</script>
+</main>
+</body>
+</html>

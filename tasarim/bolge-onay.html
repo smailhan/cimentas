@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bölge Onayı</title>
+<script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms"></script>
+<script src="assets/kabuk.js"></script>
+</head>
+<body data-kabuk="portal" class="bg-slate-50">
+
+<!-- Üst şerit -->
+<header class="bg-white border-b border-slate-100 sticky top-0 z-30">
+  <div class="max-w-lg mx-auto px-4 h-14 flex items-center justify-between gap-3">
+    <div class="flex items-center gap-3 min-w-0">
+      <span class="w-9 h-9 rounded-xl bg-[#C7D2FE] text-[#1E1B4B] flex items-center justify-center shrink-0"><i data-ikon="pump" class="w-5 h-5"></i></span>
+      <div class="min-w-0"><div class="text-sm font-semibold text-slate-900 truncate">Onaylarım</div><div class="text-[11px] text-slate-400 truncate">Çimbeton · Aylin Korkmaz, Ege Bölge Müdürü</div></div>
+    </div>
+    <div class="flex items-center gap-1">
+      <span class="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">2 bekliyor</span>
+      <button aria-label="Bildirimler" data-toast="1 yeni onay isteği: ŞNT-2026-0418" class="relative w-10 h-10 rounded-full text-slate-500 hover:bg-slate-100 flex items-center justify-center"><i data-ikon="bell" class="w-4 h-4"></i><span class="absolute top-2.5 right-2.5 w-1.5 h-1.5 bg-[#4338CA] rounded-full ring-2 ring-white"></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="onay-govde" class="max-w-lg mx-auto px-4 pt-4 pb-40 space-y-4">
+
+  <!-- Başlık kartı -->
+  <section class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between gap-2">
+      <span class="font-mono text-[11px] text-slate-400">ŞNT-2026-0418</span>
+      <span id="durum-rozet" class="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Onayınızı bekliyor</span>
+    </div>
+    <h1 class="mt-1 text-xl font-bold tracking-tight text-slate-900">Yıldız Konutları B Blok</h1>
+    <p class="mt-1 text-xs text-slate-500">Ege Yapı İnşaat Ltd. Şti. · Kemalpaşa Santrali · 14,2 km<br/>Pompalı (42 m bom) · ~180 m³ · ilk döküm 21.11.2026 08:00</p>
+    <p class="mt-2 text-[11px] text-slate-400">Tesis şefi Murat Yıldız gönderdi · 19.11.2026 09:42</p>
+  </section>
+
+  <!-- YZ özeti -->
+  <section class="rounded-2xl border border-[#E0E7FF] bg-[#EEF2FF] p-4">
+    <div class="flex items-center gap-2.5">
+      <span class="w-8 h-8 rounded-lg bg-[#E0E7FF] text-[#4338CA] flex items-center justify-center shrink-0 ring-1 ring-[#C7D2FE]"><i data-ikon="sparkle" class="w-4 h-4"></i></span>
+      <span class="text-sm font-semibold text-slate-900">YZ özeti</span>
+      <span class="inline-flex items-center gap-1 text-[10px] font-semibold text-[#4338CA] bg-white px-1.5 py-0.5 rounded">5 madde</span>
+    </div>
+    <ol class="mt-3 space-y-2.5 text-[13px] text-slate-700 leading-relaxed">
+      <li class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-white text-[#4338CA] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">1</span><span>Pompa alanının üzerinden havai hat geçiyor. Yerinde ölçülen mesafe <b>8,2 m</b>, yani 7,5–10 m bandında.</span></li>
+      <li class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-white text-[#4338CA] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">2</span><span>İlk analizdeki <b>2 çelişki</b> ilave bilgiyle giderildi: ölçüm fotoğrafı ve zemin fotoğrafı geldi.</span></li>
+      <li class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-white text-[#4338CA] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">3</span><span>Tesis şefi sevkiyatı <b>4 ilave tedbirle</b> onayladı.</span></li>
+      <li class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-white text-[#4338CA] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">4</span><span>21.11 için <b>%60 yağış</b> bekleniyor. Şantiyeden yağışta erteleme taahhüdü alındı.</span></li>
+      <li class="flex gap-2.5"><span class="w-5 h-5 rounded-full bg-white text-[#4338CA] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">5</span><span>Pompacı ve şantiye formları imzalı, <b>eksik belge yok</b>.</span></li>
+    </ol>
+  </section>
+
+  <!-- Risk kartı -->
+  <section class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between"><span class="text-sm font-semibold text-slate-900">YZ risk skoru</span><span class="text-[11px] text-slate-400">ilave bilgi sonrası yeniden analiz</span></div>
+    <div class="mt-3 flex items-center gap-3">
+      <div class="text-center"><div class="text-2xl font-bold text-rose-500 tnum line-through decoration-2 decoration-rose-300/70">78</div><div class="text-[10px] font-semibold text-rose-500">Yüksek</div></div>
+      <i data-ikon="arrow-r" class="w-5 h-5 text-slate-300"></i>
+      <div class="text-center"><div class="text-3xl font-bold text-amber-600 tnum">46</div><div class="text-[10px] font-semibold text-amber-700">Orta</div></div>
+      <div class="flex-1 ml-2">
+        <div class="relative h-2 rounded-full bg-gradient-to-r from-emerald-200 via-amber-200 to-rose-300">
+          <span class="absolute -top-1 w-0.5 h-4 bg-rose-400/60 rounded" style="left:78%"></span>
+          <span class="absolute -top-1.5 w-3.5 h-5 -ml-1.5 bg-white border-2 border-amber-500 rounded-md shadow-sm" style="left:46%"></span>
+        </div>
+        <div class="mt-1.5 flex justify-between text-[10px] text-slate-400 tnum"><span>0</span><span>50</span><span>100</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kritik fotoğraflar -->
+  <section class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between mb-3"><span class="text-sm font-semibold text-slate-900">Kritik fotoğraflar</span><span class="text-[11px] text-slate-400">3 / 7 · kaydırın</span></div>
+    <div class="-mx-4 px-4 flex gap-3 overflow-x-auto snap-x snap-mandatory pb-1">
+      <figure class="snap-start shrink-0 w-56">
+        <div class="relative h-40 rounded-xl overflow-hidden"><img src="assets/foto-hat-bina.jpg" alt="Hat ve pompa alanı" class="w-full h-full object-cover"/><span class="absolute top-2 left-2 text-[10px] font-semibold text-white bg-rose-500 px-1.5 py-0.5 rounded">HAVAİ HAT</span></div>
+        <figcaption class="mt-1.5 text-[11px] text-slate-500">Hat + pompa alanı birlikte · 3 iletken</figcaption>
+      </figure>
+      <figure class="snap-start shrink-0 w-56">
+        <div class="relative h-40 rounded-xl overflow-hidden bg-gradient-to-br from-slate-300 via-slate-200 to-amber-100">
+          <svg viewBox="0 0 224 160" class="absolute inset-0 w-full h-full"><path d="M0 34 L224 22" stroke="#334155" stroke-width="1.5"/><path d="M0 40 L224 28" stroke="#334155" stroke-width="1.5"/><path d="M60 34 L60 140" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6 4"/><rect x="40" y="128" width="60" height="16" rx="3" fill="#475569"/></svg>
+          <span class="absolute left-[30%] top-[42%] text-sm font-bold text-white bg-slate-900/85 px-2 py-0.5 rounded-md tnum">8,2 m</span>
+          <span class="absolute top-2 left-2 text-[10px] font-semibold text-white bg-emerald-600 px-1.5 py-0.5 rounded">ÖLÇÜM</span>
+        </div>
+        <figcaption class="mt-1.5 text-[11px] text-slate-500">Şerit metre ölçümü · Kemal Aydın · 19.11</figcaption>
+      </figure>
+      <figure class="snap-start shrink-0 w-56">
+        <div class="relative h-40 rounded-xl overflow-hidden"><img src="assets/foto-hat-sokak.jpg" alt="Mikser güzergahı" class="w-full h-full object-cover object-top"/><span class="absolute top-2 left-2 text-[10px] font-semibold text-white bg-amber-500 px-1.5 py-0.5 rounded">GÜZERGAH</span></div>
+        <figcaption class="mt-1.5 text-[11px] text-slate-500">Mikser güzergahı · hat + direk, park var</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Tesis şefi kararı -->
+  <section class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+    <div class="flex items-center gap-3">
+      <span class="w-9 h-9 rounded-full bg-[#E0E7FF] text-[#4338CA] text-xs font-semibold flex items-center justify-center">MY</span>
+      <div class="min-w-0 flex-1"><div class="text-sm font-semibold text-slate-900">Murat Yıldız · Tesis Şefi</div><div class="text-[11px] text-slate-400">Form 01 imzalı · 19.11.2026 09:40</div></div>
+      <span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full"><i data-ikon="check" class="w-3 h-3"></i>Onayladı</span>
+    </div>
+    <div class="mt-3 text-xs font-semibold text-slate-700">İlave tedbirler</div>
+    <ul class="mt-2 space-y-2 text-[13px] text-slate-700">
+      <li class="flex items-start gap-2.5"><i data-ikon="user" class="w-4 h-4 mt-0.5 text-slate-400"></i>Kurulum ve döküm boyunca işaretçi bulundurulacak</li>
+      <li class="flex items-start gap-2.5"><i data-ikon="alert" class="w-4 h-4 mt-0.5 text-slate-400"></i>Hat tarafına bariyer şeridi çekilecek</li>
+      <li class="flex items-start gap-2.5"><i data-ikon="pump" class="w-4 h-4 mt-0.5 text-slate-400"></i>Bom, hattın ters cephesinde açılacak</li>
+      <li class="flex items-start gap-2.5"><i data-ikon="clock" class="w-4 h-4 mt-0.5 text-slate-400"></i>Yağış halinde döküm ertelenecek</li>
+    </ul>
+    <div class="mt-3 rounded-xl bg-slate-50 px-3 py-2.5 text-xs text-slate-600">"Ölçüm 8,2 m çıktı, bariyerleme planı uygun. Yağış tahmini nedeniyle döküm sabahı teyit alacağım." — Murat Yıldız</div>
+  </section>
+
+  <!-- Tüm detaylar -->
+  <details class="group bg-white rounded-2xl shadow-sm border border-slate-100">
+    <summary class="list-none cursor-pointer px-4 py-3.5 flex items-center justify-between text-sm font-semibold text-slate-900">Tüm detaylar <i data-ikon="chev-d" class="w-4 h-4 text-slate-400 transition group-open:rotate-180"></i></summary>
+    <div class="px-4 pb-4 space-y-4">
+      <div class="space-y-2">
+        <div class="text-[11px] font-semibold uppercase tracking-wide text-slate-400">Formlar</div>
+        <a href="#" data-toast="İmzalı PDF açılıyor" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl border border-slate-100 hover:border-slate-300"><span class="flex items-center gap-2.5 text-xs"><i data-ikon="file" class="w-4 h-4 text-slate-400"></i><span><b class="font-semibold text-slate-800">Form 02 · İSG Uygunluk Beyanı</b><span class="block text-slate-400">Kemal Aydın · 17.11 16:40</span></span></span><i data-ikon="chev-r" class="w-4 h-4 text-slate-300"></i></a>
+        <a href="#" data-toast="İmzalı PDF açılıyor" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl border border-slate-100 hover:border-slate-300"><span class="flex items-center gap-2.5 text-xs"><i data-ikon="file" class="w-4 h-4 text-slate-400"></i><span><b class="font-semibold text-slate-800">Form 03 · Pompa Değerlendirmesi</b><span class="block text-slate-400">Serkan Demir · 18.11 10:15 · ek: 19.11</span></span></span><i data-ikon="chev-r" class="w-4 h-4 text-slate-300"></i></a>
+        <a href="talep-form01.html" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl border border-slate-100 hover:border-slate-300"><span class="flex items-center gap-2.5 text-xs"><i data-ikon="file" class="w-4 h-4 text-slate-400"></i><span><b class="font-semibold text-slate-800">Form 01 · Sevkiyat Değerlendirmesi</b><span class="block text-slate-400">Murat Yıldız · 19.11 09:40</span></span></span><i data-ikon="chev-r" class="w-4 h-4 text-slate-300"></i></a>
+      </div>
+      <div>
+        <div class="text-[11px] font-semibold uppercase tracking-wide text-slate-400 mb-2">İz kaydı</div>
+        <ol class="relative border-l border-slate-200 ml-1.5 space-y-3 text-xs">
+          <li class="ml-4"><span class="absolute -left-[5px] w-2.5 h-2.5 rounded-full bg-amber-500 ring-4 ring-white"></span><b class="font-semibold text-slate-800">Bölge onayına gönderildi</b><span class="block text-[11px] text-slate-400">19.11 09:42 · Murat Yıldız</span></li>
+          <li class="ml-4"><span class="absolute -left-[5px] w-2.5 h-2.5 rounded-full bg-[#4338CA] ring-4 ring-white"></span><b class="font-semibold text-slate-800">YZ yeniden analiz: Orta (46)</b><span class="block text-[11px] text-slate-400">19.11 09:05 · çelişkiler giderildi</span></li>
+          <li class="ml-4"><span class="absolute -left-[5px] w-2.5 h-2.5 rounded-full bg-slate-900 ring-4 ring-white"></span><b class="font-semibold text-slate-800">İlave bilgi geldi</b><span class="block text-[11px] text-slate-400">19.11 08:51 · ölçüm, zemin fotoğrafı, bariyerleme planı</span></li>
+          <li class="ml-4"><span class="absolute -left-[5px] w-2.5 h-2.5 rounded-full bg-slate-300 ring-4 ring-white"></span><b class="font-semibold text-slate-800">İlave bilgi istendi</b><span class="block text-[11px] text-slate-400">18.11 11:02 · YZ taslağı kullanıldı</span></li>
+          <li class="ml-4"><span class="absolute -left-[5px] w-2.5 h-2.5 rounded-full bg-[#4338CA] ring-4 ring-white"></span><b class="font-semibold text-slate-800">YZ ön analizi: Yüksek (78)</b><span class="block text-[11px] text-slate-400">18.11 10:17 · 2 çelişki, 1 eksik</span></li>
+        </ol>
+      </div>
+    </div>
+  </details>
+
+  <!-- İkinci bekleyen -->
+  <div>
+    <div class="px-1 mb-2 text-[11px] font-semibold uppercase tracking-wide text-slate-400">Sırada bekleyen</div>
+    <a href="#" data-toast="ŞNT-2026-0414 açılıyor (PoC: tek talep detaylı)" class="flex items-center justify-between gap-3 bg-white rounded-2xl p-4 shadow-sm border border-slate-100 hover:border-slate-300">
+      <div class="min-w-0"><div class="font-mono text-[11px] text-slate-400">ŞNT-2026-0414</div><div class="text-sm font-semibold text-slate-900 truncate">Çiğli Ticaret Merkezi</div><div class="text-[11px] text-slate-400">Körfez İnşaat · Menemen Santrali · Pompalı</div></div>
+      <div class="flex items-center gap-2 shrink-0"><span class="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full"><i data-ikon="sparkle" class="w-3 h-3"></i>Orta · 41</span><i data-ikon="chev-r" class="w-4 h-4 text-slate-300"></i></div>
+    </a>
+  </div>
+</main>
+
+<!-- Başarı ekranı (gizli) -->
+<main id="basari" class="hidden max-w-lg mx-auto px-4 pt-10 pb-32">
+  <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center">
+    <span class="mx-auto w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center"><i data-ikon="check-circle" class="w-7 h-7"></i></span>
+    <h2 class="mt-4 text-xl font-bold tracking-tight text-slate-900">Onayınız kaydedildi</h2>
+    <p class="mt-1 text-sm text-slate-600">ŞNT-2026-0418 · Yıldız Konutları B Blok</p>
+    <div class="mt-5 rounded-xl bg-slate-50 px-4 py-3 text-left text-xs text-slate-600 space-y-2">
+      <div class="flex items-center gap-2"><i data-ikon="mail" class="w-4 h-4 text-slate-400"></i>Group Master Data'ya şantiye açılış bildirimi gönderildi</div>
+      <div class="flex items-center gap-2"><i data-ikon="message" class="w-4 h-4 text-slate-400"></i>Tesis şefi ve satış temsilcisi bilgilendirildi</div>
+      <div class="flex items-center gap-2"><i data-ikon="lock" class="w-4 h-4 text-slate-400"></i>SMS doğrulamalı onay iz kaydına yazıldı · <span class="tnum">19.11.2026 10:06</span></div>
+    </div>
+    <div class="mt-5 flex flex-col gap-2">
+      <a href="master-data.html" class="inline-flex items-center justify-center gap-2 h-12 rounded-xl bg-slate-900 text-sm font-semibold text-white hover:bg-slate-800">Şantiye açılışına geç <i data-ikon="arrow-r" class="w-4 h-4"></i></a>
+      <button onclick="location.reload()" class="h-12 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 hover:bg-slate-50">Sıradaki onaya geç (1)</button>
+    </div>
+  </div>
+</main>
+
+<!-- Sabit alt düğmeler -->
+<div id="alt-dugmeler" class="fixed bottom-20 inset-x-0 z-30 px-4">
+  <div class="max-w-lg mx-auto grid grid-cols-2 gap-3 bg-white/95 backdrop-blur rounded-2xl p-2 shadow-xl shadow-slate-900/10 border border-slate-100">
+    <button data-ac="red-modal" class="h-12 rounded-xl border border-rose-200 bg-white text-sm font-semibold text-rose-600 hover:bg-rose-50 inline-flex items-center justify-center gap-2"><i data-ikon="x" class="w-4 h-4"></i>Reddet</button>
+    <button data-ac="onay-modal" class="h-12 rounded-xl bg-slate-900 text-sm font-semibold text-white hover:bg-slate-800 inline-flex items-center justify-center gap-2"><i data-ikon="check" class="w-4 h-4"></i>Onayla</button>
+  </div>
+</div>
+
+<!-- Red modal -->
+<div id="red-modal" data-modal data-kapat-zemin class="hidden fixed inset-0 z-50 bg-slate-900/40 flex items-end sm:items-center justify-center p-0 sm:p-4">
+  <div class="w-full max-w-lg bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl p-5">
+    <div class="flex items-center justify-between"><span class="text-base font-semibold text-slate-900">Sevkiyatı reddet</span><button data-kapat class="p-1.5 rounded-lg text-slate-400 hover:bg-slate-100"><i data-ikon="x" class="w-4 h-4"></i></button></div>
+    <p class="mt-1 text-xs text-slate-500">Talep "Reddedildi" durumuna geçer. Uygunluk sağlanana kadar süreç kapanır, tesis şefi ve satış bilgilendirilir.</p>
+    <label class="block mt-4 text-xs font-semibold text-slate-700">Gerekçe <span class="text-rose-500">*</span></label>
+    <textarea id="red-gerekce" rows="4" placeholder="Örn. Hat mesafesi yağışlı havada yetersiz kalıyor; enerji kesme başvurusu yapılmadan sevkiyat yapılmamalı." class="mt-1.5 w-full rounded-xl border-slate-200 text-sm focus:border-[#6366F1] focus:ring-[#6366F1]/20"></textarea>
+    <p id="red-hata" class="hidden mt-1 text-[11px] text-rose-500">Gerekçe yazmadan reddedemezsiniz.</p>
+    <div class="mt-4 grid grid-cols-2 gap-3"><button data-kapat class="h-12 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700">Vazgeç</button><button onclick="reddet()" class="h-12 rounded-xl bg-rose-600 text-sm font-semibold text-white hover:bg-rose-700">Reddet</button></div>
+  </div>
+</div>
+
+<!-- Onay modal -->
+<div id="onay-modal" data-modal data-kapat-zemin class="hidden fixed inset-0 z-50 bg-slate-900/40 flex items-end sm:items-center justify-center p-0 sm:p-4">
+  <div class="w-full max-w-lg bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl p-5">
+    <div class="flex items-center justify-between"><span class="text-base font-semibold text-slate-900">Sevkiyatı onayla</span><button data-kapat class="p-1.5 rounded-lg text-slate-400 hover:bg-slate-100"><i data-ikon="x" class="w-4 h-4"></i></button></div>
+    <p class="mt-1 text-xs text-slate-500">Onayınız tesis şefinin 4 ilave tedbiriyle birlikte kayda geçer ve şantiye açılışı için Group Master Data'ya iletilir.</p>
+    <label class="block mt-4 text-xs font-semibold text-slate-700">Not <span class="font-normal text-slate-400">(isteğe bağlı)</span></label>
+    <textarea rows="3" placeholder="Örn. Döküm sabahı yağış teyidi tesis şefinden alınsın." class="mt-1.5 w-full rounded-xl border-slate-200 text-sm focus:border-[#6366F1] focus:ring-[#6366F1]/20"></textarea>
+    <div class="mt-4">
+      <div class="text-xs font-semibold text-slate-700">SMS doğrulama kodu</div>
+      <p class="text-[11px] text-slate-400">0533 *** 18 62 numarasına gönderildi</p>
+      <div class="mt-2 flex gap-2">
+        <input inputmode="numeric" maxlength="1" value="4" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+        <input inputmode="numeric" maxlength="1" value="8" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+        <input inputmode="numeric" maxlength="1" value="2" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+        <input inputmode="numeric" maxlength="1" value="0" class="w-11 h-12 text-center text-lg font-semibold rounded-xl border-slate-200 focus:border-[#6366F1] focus:ring-[#6366F1]/20"/>
+      </div>
+    </div>
+    <div class="mt-5 grid grid-cols-2 gap-3"><button data-kapat class="h-12 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700">Vazgeç</button><button onclick="onayla()" class="h-12 rounded-xl bg-slate-900 text-sm font-semibold text-white hover:bg-slate-800 inline-flex items-center justify-center gap-2"><i data-ikon="check" class="w-4 h-4"></i>Onayla</button></div>
+  </div>
+</div>
+
+<script>
+function gizleModallar(){document.querySelectorAll('[data-modal]').forEach(function(m){m.classList.add('hidden');});}
+function onayla(){
+  gizleModallar();
+  document.getElementById('onay-govde').classList.add('hidden');
+  document.getElementById('alt-dugmeler').classList.add('hidden');
+  document.getElementById('basari').classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+function reddet(){
+  var g=document.getElementById('red-gerekce');
+  if(!g.value.trim()){document.getElementById('red-hata').classList.remove('hidden');g.focus();return;}
+  gizleModallar();
+  var r=document.getElementById('durum-rozet');
+  r.className='inline-flex items-center gap-1 text-xs font-semibold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-full';
+  r.innerHTML='<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>Reddedildi';
+  document.getElementById('alt-dugmeler').classList.add('hidden');
+  ui.toast('Talep reddedildi · tesis şefi ve satış bilgilendirildi');
+}
+</script>
+</body>
+</html>

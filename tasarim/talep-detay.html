@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Talep İnceleme</title>
+<script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms"></script>
+<script src="assets/kabuk.js"></script>
+</head>
+<body>
+<main data-kabuk="ic" data-menu="talepler" class="flex-1 p-4 md:p-6 lg:p-7 space-y-5">
+
+<!-- Başlık kartı -->
+<section class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+  <div class="flex flex-wrap items-start justify-between gap-4">
+    <div class="min-w-0">
+      <nav aria-label="Konum" class="flex items-center space-x-1.5 text-xs text-slate-400"><a class="hover:text-slate-900" href="pano.html">Pano</a><span>/</span><a class="hover:text-slate-900" href="talepler.html">Talepler</a><span>/</span><span class="text-slate-600 font-medium font-mono">ŞNT-2026-0418</span></nav>
+      <h2 class="mt-1.5 text-2xl font-bold tracking-tight text-slate-900">Yıldız Konutları B Blok</h2>
+      <div class="mt-2 flex flex-wrap items-center gap-2">
+        <span class="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>İncelemede</span>
+        <span class="inline-flex items-center text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full">Pompalı döküm</span>
+        <span class="inline-flex items-center gap-1 text-xs font-semibold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-full"><i data-ikon="sparkle" class="w-3 h-3"></i>YZ risk: Yüksek · 78</span>
+        <span class="text-xs text-slate-400">Ege Yapı İnşaat Ltd. Şti. · Kemalpaşa Santrali · 14,2 km · ~180 m³ · ilk döküm 21.11.2026 08:00</span>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center gap-2">
+      <a href="talep-fotograflar.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-600 hover:bg-slate-50"><i data-ikon="camera" class="w-3.5 h-3.5"></i>Fotoğraflar <span class="text-[10px] opacity-70">5+1</span></a>
+      <button data-ac="ek-bilgi" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-600 hover:bg-slate-50"><i data-ikon="message" class="w-3.5 h-3.5"></i>İlave bilgi iste</button>
+      <a href="talep-form01.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-xs font-medium text-white shadow-sm shadow-slate-900/10 hover:bg-slate-800"><i data-ikon="file" class="w-3.5 h-3.5"></i>Sevkiyat değerlendirmesi (Form 01)</a>
+      <button aria-label="Diğer işlemler" data-toast="Sorumluyu değiştir · PDF dışa aktar · Talebi iptal et" class="p-1.5 rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50" type="button"><i data-ikon="more" class="w-3.5 h-3.5"></i></button>
+    </div>
+  </div>
+  <div class="mt-4 flex flex-wrap items-center justify-between gap-2 rounded-xl bg-[#EEF2FF] border border-[#E0E7FF] px-4 py-2.5">
+    <span class="inline-flex items-center gap-2 text-xs font-medium text-[#3730A3]"><i data-ikon="sparkle" class="w-3.5 h-3.5"></i>YZ, iki form ve 6 görsel kaydı karşılaştırdı: <b class="font-semibold">2 çelişki, 1 eksik belge, 2 uyarı</b>. Karar vermeden önce ilave bilgi istenmesini öneriyor.</span>
+    <button data-ac="ek-bilgi" class="text-xs font-semibold text-[#4338CA] hover:underline" type="button">Öneriyi incele →</button>
+  </div>
+</section>
+
+<!-- Süreç çizgisi -->
+<section class="bg-white rounded-2xl px-5 py-4 shadow-sm border border-slate-100 overflow-x-auto">
+  <ol class="flex items-center min-w-[760px] text-[11px]">
+    <li class="flex items-center gap-2 text-slate-500"><span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center"><i data-ikon="check" class="w-3.5 h-3.5"></i></span><span><b class="block font-semibold text-slate-800">Talep</b>15.11 · Burak Şen</span></li>
+    <li class="flex-1 h-px bg-slate-900 mx-3"></li>
+    <li class="flex items-center gap-2 text-slate-500"><span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center"><i data-ikon="check" class="w-3.5 h-3.5"></i></span><span><b class="block font-semibold text-slate-800">Form 02</b>17.11 · K. Aydın</span></li>
+    <li class="flex-1 h-px bg-slate-900 mx-3"></li>
+    <li class="flex items-center gap-2 text-slate-500"><span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center"><i data-ikon="check" class="w-3.5 h-3.5"></i></span><span><b class="block font-semibold text-slate-800">Form 03</b>18.11 · S. Demir</span></li>
+    <li class="flex-1 h-px bg-slate-900 mx-3"></li>
+    <li class="flex items-center gap-2 text-slate-500"><span class="w-6 h-6 rounded-full bg-[#4338CA] text-white flex items-center justify-center"><i data-ikon="sparkle" class="w-3.5 h-3.5"></i></span><span><b class="block font-semibold text-slate-800">YZ analizi</b>18.11 10:17</span></li>
+    <li class="flex-1 h-px bg-slate-900 mx-3"></li>
+    <li class="flex items-center gap-2 text-slate-500"><span class="w-6 h-6 rounded-full ring-4 ring-amber-100 bg-amber-500 text-white flex items-center justify-center"><i data-ikon="eye" class="w-3.5 h-3.5"></i></span><span><b class="block font-semibold text-slate-900">İnceleme</b>Tesis şefinde</span></li>
+    <li class="flex-1 h-px bg-slate-200 mx-3"></li>
+    <li class="flex items-center gap-2 text-slate-400"><span class="w-6 h-6 rounded-full border-2 border-slate-200 bg-white"></span><span><b class="block font-semibold">Bölge onayı</b>A. Korkmaz</span></li>
+    <li class="flex-1 h-px bg-slate-200 mx-3"></li>
+    <li class="flex items-center gap-2 text-slate-400"><span class="w-6 h-6 rounded-full border-2 border-slate-200 bg-white"></span><span><b class="block font-semibold">Şantiye açılışı</b>Master Data</span></li>
+  </ol>
+</section>
+
+<!-- KPI -->
+<section class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100"><span class="text-sm font-medium text-slate-700">YZ risk skoru</span><div class="mt-3 flex items-baseline gap-1"><span class="text-2xl font-bold tracking-tight text-rose-500 tnum">78</span><span class="text-sm text-slate-400">/100</span></div><div class="mt-2 w-full bg-slate-100 h-1.5 rounded-full overflow-hidden"><div class="bg-rose-500 h-full rounded-full" style="width:78%"></div></div><p class="text-xs text-slate-400 mt-1">Yüksek · havai hat ağırlıklı</p></div>
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100"><span class="text-sm font-medium text-slate-700">Form 02 · Şantiye</span><span class="mt-3 flex items-center gap-1.5 text-2xl font-bold tracking-tight text-slate-900"><i data-ikon="check-circle" class="w-5 h-5 text-emerald-500"></i>Geldi</span><p class="text-xs text-slate-400 mt-1">17.11 16:40 · imzalı · "yapılabilir"</p></div>
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100"><span class="text-sm font-medium text-slate-700">Form 03 · Pompacı</span><span class="mt-3 flex items-center gap-1.5 text-2xl font-bold tracking-tight text-slate-900"><i data-ikon="check-circle" class="w-5 h-5 text-emerald-500"></i>Geldi</span><p class="text-xs text-slate-400 mt-1">18.11 10:15 · imzalı · "ilave tedbirle"</p></div>
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100"><span class="text-sm font-medium text-slate-700">Görsel kayıt</span><span class="mt-3 block text-2xl font-bold tracking-tight text-slate-900 tnum">5<span class="text-slate-300">/6</span></span><div class="mt-2 flex gap-1"><span class="h-1.5 flex-1 rounded-full bg-slate-900"></span><span class="h-1.5 flex-1 rounded-full bg-slate-900"></span><span class="h-1.5 flex-1 rounded-full bg-slate-900"></span><span class="h-1.5 flex-1 rounded-full bg-slate-900"></span><span class="h-1.5 flex-1 rounded-full bg-slate-900"></span><span class="h-1.5 flex-1 rounded-full bg-rose-300"></span></div><p class="text-xs text-slate-400 mt-1">+ 1 video · kroki · <span class="text-rose-500">zemin eksik</span></p></div>
+  <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 col-span-2 md:col-span-1"><span class="text-sm font-medium text-slate-700">Havai hat mesafesi</span><span class="mt-3 block text-2xl font-bold tracking-tight text-slate-900 tnum">6–8 m</span><p class="text-xs text-slate-400 mt-1"><span class="text-[#4338CA] font-medium">YZ tahmini</span> · beyan 7,5–10 m</p></div>
+</section>
+
+<!-- Sekmeler -->
+<div data-sekmeler class="space-y-5">
+<nav class="flex flex-wrap gap-1 rounded-xl bg-white border border-slate-100 shadow-sm p-1" role="tablist">
+  <button data-sekme="ozet" role="tab" class="px-3 py-1.5 rounded-lg text-xs font-medium transition bg-slate-900 text-white" type="button">YZ ön analizi</button>
+  <button data-sekme="formlar" role="tab" class="px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-600 hover:bg-slate-50" type="button">Formlar yan yana <span class="ml-0.5 text-[10px] opacity-70">02 · 03</span></button>
+  <a href="talep-fotograflar.html" class="px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-600 hover:bg-slate-50">Fotoğraf ve video <span class="ml-0.5 text-[10px] opacity-70">6</span></a>
+  <a href="talep-form01.html" class="px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-600 hover:bg-slate-50">Form 01</a>
+  <button data-sekme="gecmis" role="tab" class="px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-600 hover:bg-slate-50" type="button">Geçmiş <span class="ml-0.5 text-[10px] opacity-70">9</span></button>
+</nav>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+<div class="lg:col-span-8 min-w-0 space-y-5">
+
+<!-- ===== SEKME: YZ ÖN ANALİZİ ===== -->
+<div data-sekme-panel="ozet" class="space-y-5">
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-lg bg-[#E0E7FF] text-[#4338CA] flex items-center justify-center shrink-0"><i data-ikon="sparkle" class="w-4 h-4"></i></span>
+        <span class="text-sm font-semibold text-slate-800">Yapay zekâ ön analizi</span>
+        <span class="inline-flex items-center gap-1 text-[10px] font-semibold text-[#4338CA] bg-[#E0E7FF] px-1.5 py-0.5 rounded"><i data-ikon="sparkle" class="w-3 h-3"></i>öneri</span>
+      </div>
+      <button data-toast="Analiz yeniden çalıştırılıyor… (formlar + 6 görsel kayıt)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-600 hover:bg-slate-50" type="button"><i data-ikon="refresh" class="w-3.5 h-3.5"></i>Yeniden çalıştır</button>
+    </div>
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="inline-flex items-center font-semibold text-rose-500 bg-rose-50 text-sm px-2.5 py-1 rounded-full">2 çelişki</span>
+      <span class="inline-flex items-center font-semibold text-rose-500 bg-rose-50 text-sm px-2.5 py-1 rounded-full">1 eksik</span>
+      <span class="inline-flex items-center font-semibold text-amber-700 bg-amber-50 text-sm px-2.5 py-1 rounded-full">2 uyarı</span>
+      <span class="text-xs text-slate-500 ml-1">· 13 kontrol maddesinde sorun görülmedi</span>
+    </div>
+    <div class="mt-3 rounded-xl bg-slate-50 px-4 py-3 text-sm text-slate-700 leading-relaxed">
+      <b class="font-semibold text-slate-900">Özet:</b> Pompa kurulacak alanın üzerinden <b>3 iletkenli havai hat</b> geçiyor. Fotoğraflardan tahmin edilen mesafe <b>6–8 m</b>, yani "ilave tedbir alınmadan çalışılamaz" bandında. Şantiye yetkilisi enerji kesme izni gerekmediğini, pompacı ise hattın 7,5–10 m uzakta olduğunu beyan etmiş. Bu iki beyan fotoğraflarla tutarlı değil. Pompa ayağı zemini fotoğrafı yok. 21.11 için %60 yağış bekleniyor; yağışta güvenli mesafe iki katına çıkar.
+    </div>
+    <p class="mt-2 text-[11px] text-slate-400">Otomatik çalıştı · 18.11.2026 10:17 · Form 02 + Form 03 + 5 fotoğraf + 1 video + kroki · kural seti: EK-1 talimatı, ÇSGB Güvenli İnşaat Bilgi Kartı 6 · sonuç yalnız öneridir, kararı tesis yetkilisi verir</p>
+
+    <ul class="mt-2 divide-y divide-slate-100">
+      <!-- Bulgu 1 -->
+      <li class="py-4" id="b1">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2"><span class="text-sm font-semibold text-slate-800">Enerji kesme izni beyanı fotoğraflarla çelişiyor</span><span class="inline-flex items-center text-xs font-semibold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-full">Çelişki · Yüksek</span></div>
+          <span class="font-mono text-[11px] text-slate-400">Form 02 m.3 ↔ Fotoğraf 1, 2</span>
+        </div>
+        <div class="mt-2 grid sm:grid-cols-2 gap-2">
+          <div class="rounded-lg border border-slate-100 px-3 py-2"><div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Şantiye yetkilisi · Form 02</div><p class="mt-1 text-xs text-slate-700">«Elektrik enerjisi kesme izni gerektiren çalışma bulunmamaktadır.» → <b class="text-emerald-600">Evet</b></p></div>
+          <a href="talep-fotograflar.html" class="rounded-lg border border-slate-100 px-3 py-2 flex gap-3 hover:border-slate-300"><img src="assets/foto-hat-bina.jpg" alt="" class="w-12 h-12 rounded-md object-cover"/><div><div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Fotoğraf analizi</div><p class="mt-1 text-xs text-slate-700">Pompa alanı üzerinde 3 iletken · tahmini <b>6–8 m</b> · güven %74</p></div></a>
+        </div>
+        <p class="mt-2 text-xs text-slate-600 leading-relaxed"><b class="font-semibold text-slate-800">Neden önemli:</b> 6–7,5 m bandında işaretçi, bariyerleme ve çalışma planı olmadan çalışılamaz. Tahminin alt sınırı 6 m'ye yakın olduğu için enerji kesme ihtiyacı dışlanamaz. 42 m bom açılımı hattın altına giriyor.</p>
+        <div class="mt-2 rounded-lg border border-[#E0E7FF] bg-[#EEF2FF] px-3 py-2.5">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#4338CA]"><i data-ikon="sparkle" class="w-3 h-3"></i>Öneri</span>
+          <p class="mt-1 text-xs text-slate-700 leading-relaxed">Şantiye yetkilisinden hat ile pompa ayağı noktası arasında <b>şerit metre ile ölçüm fotoğrafı</b> isteyin. Ölçüm 7,5 m'nin altındaysa GDZ Elektrik'e enerji kesme başvurusu veya pompa konumunun hattan uzak cepheye kaydırılması gerekir.</p>
+          <div class="mt-2 flex gap-2"><button data-toast="Öneri kabul edildi · ilave bilgi talebine eklendi" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-slate-900 text-[11px] font-medium text-white"><i data-ikon="check" class="w-3 h-3"></i>Kabul et</button><button data-toast="Gerekçe istenir · iz kaydına yazılır" class="px-2.5 py-1 rounded-md border border-slate-200 bg-white text-[11px] font-medium text-slate-600">Yok say</button></div>
+        </div>
+      </li>
+      <!-- Bulgu 2 -->
+      <li class="py-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2"><span class="text-sm font-semibold text-slate-800">Pompacının mesafe beyanı ile fotoğraf tahmini uyuşmuyor</span><span class="inline-flex items-center text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Çelişki · Orta</span></div>
+          <span class="font-mono text-[11px] text-slate-400">Form 03 m.7 + hat kriteri ↔ Fotoğraf 2</span>
+        </div>
+        <div class="mt-3 relative h-9 rounded-lg overflow-hidden flex text-[10px] font-semibold text-center leading-9">
+          <div class="flex-[6] bg-rose-100 text-rose-600">&lt;6 m · enerji kesilmeli</div>
+          <div class="flex-[1.5] bg-orange-100 text-orange-600">6–7,5</div>
+          <div class="flex-[2.5] bg-amber-50 text-amber-700">7,5–10 · ortak değerlendirme</div>
+          <div class="flex-[3] bg-emerald-50 text-emerald-600">&gt;10 m</div>
+          <div class="absolute top-0 bottom-0 border-2 border-[#4338CA] rounded-md bg-[#4338CA]/10" style="left:46%;width:15.4%"></div>
+          <div class="absolute top-0 bottom-0 border-2 border-dashed border-slate-700 rounded-md" style="left:57.7%;width:19.2%"></div>
+        </div>
+        <div class="mt-1.5 flex flex-wrap gap-4 text-[11px] text-slate-500"><span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded border-2 border-[#4338CA] bg-[#4338CA]/10"></span>YZ tahmini 6–8 m</span><span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded border-2 border-dashed border-slate-700"></span>Pompacı beyanı 7,5–10 m</span></div>
+        <p class="mt-2 text-xs text-slate-600 leading-relaxed"><b class="font-semibold text-slate-800">Neden önemli:</b> Pompacı m.7'ye "güvenli mesafe sağlanabiliyor: Evet" demiş, ama kendi sonucu "ilave tedbir sonrası döküm yapılabilir". Tedbir olarak yalnız "işaretçi bulundurulacak" yazılmış; bariyerleme ve çalışma planı yok.</p>
+        <div class="mt-2 rounded-lg border border-[#E0E7FF] bg-[#EEF2FF] px-3 py-2.5"><span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#4338CA]"><i data-ikon="sparkle" class="w-3 h-3"></i>Öneri</span><p class="mt-1 text-xs text-slate-700">Pompacıdan bom açılım yönünü gösteren güncel kroki ve bariyerleme/çalışma planı isteyin.</p><div class="mt-2 flex gap-2"><button data-toast="Öneri kabul edildi" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-slate-900 text-[11px] font-medium text-white"><i data-ikon="check" class="w-3 h-3"></i>Kabul et</button><button data-toast="Gerekçe istenir" class="px-2.5 py-1 rounded-md border border-slate-200 bg-white text-[11px] font-medium text-slate-600">Yok say</button></div></div>
+      </li>
+      <!-- Bulgu 3 -->
+      <li class="py-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2"><span class="text-sm font-semibold text-slate-800">"Pompa ayağı zemini" fotoğrafı eksik</span><span class="inline-flex items-center text-xs font-semibold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-full">Eksik</span></div>
+          <span class="font-mono text-[11px] text-slate-400">Form 03 · zorunlu 6 tür</span>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-1.5 text-[11px]">
+          <span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-slate-50 text-slate-600"><i data-ikon="check" class="w-3 h-3 text-emerald-500"></i>Genel şantiye</span>
+          <span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-slate-50 text-slate-600"><i data-ikon="check" class="w-3 h-3 text-emerald-500"></i>Pompa kurulum alanı</span>
+          <span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-rose-50 text-rose-600 font-semibold"><i data-ikon="x" class="w-3 h-3"></i>Pompa ayağı zemini</span>
+          <span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-slate-50 text-slate-600"><i data-ikon="check" class="w-3 h-3 text-emerald-500"></i>Havai elektrik hattı</span>
+          <span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-slate-50 text-slate-600"><i data-ikon="check" class="w-3 h-3 text-emerald-500"></i>Mikser güzergahı</span>
+          <span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-slate-50 text-slate-600"><i data-ikon="check" class="w-3 h-3 text-emerald-500"></i>Hat + pompa alanı birlikte</span>
+        </div>
+        <p class="mt-2 text-xs text-slate-600">Pompacı m.8'de "zemin gözle uygun" demiş, ama bunu destekleyen görsel yok. Pompacının portalında bu tür için yükleme uyarısı verilmişti, form yine de gönderilmiş.</p>
+      </li>
+      <!-- Bulgu 4-5 -->
+      <li class="py-4">
+        <div class="flex flex-wrap items-center justify-between gap-2"><div class="flex items-center gap-2"><span class="text-sm font-semibold text-slate-800">Mikser güzergahında havai hat ve park halinde araçlar</span><span class="inline-flex items-center text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Uyarı</span></div><span class="font-mono text-[11px] text-slate-400">Fotoğraf 4 · Form 03 m.1</span></div>
+        <p class="mt-2 text-xs text-slate-600">Yol genişliği yaklaşık 6 m, sağ şeritte park halinde 4 araç var. Pompacı "mikser girişi dar" notu düşmüş. <span class="text-[#4338CA] font-medium">Öneri:</span> mikser manevrası için işaretçi bulundurulsun, döküm günü parka kısıt konusunda şantiyeyle anlaşılsın.</p>
+      </li>
+      <li class="py-4">
+        <div class="flex flex-wrap items-center justify-between gap-2"><div class="flex items-center gap-2"><span class="text-sm font-semibold text-slate-800">Döküm günü yağış bekleniyor</span><span class="inline-flex items-center text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Uyarı</span></div><span class="font-mono text-[11px] text-slate-400">Hava tahmini · ÇSGB Kart 6</span></div>
+        <p class="mt-2 text-xs text-slate-600">21.11.2026 Kemalpaşa: %60 yağış, rüzgâr 28 km/s. Yağışlı havada havai hat güvenli mesafesi iki katına çıkar (6–7,5 m → 12–15 m). <span class="text-[#4338CA] font-medium">Öneri:</span> yağış halinde dökümün erteleneceği yazılı olarak teyit edilsin.</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== SEKME: FORMLAR YAN YANA ===== -->
+<div data-sekme-panel="formlar" class="hidden space-y-5">
+  <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+    <div class="px-5 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-100">
+      <div><div class="text-sm font-semibold text-slate-900">Beyan karşılaştırması</div><div class="text-[11px] text-slate-400">Aynı konudaki maddeler eşleştirildi · <span class="text-rose-500 font-medium">kırmızı</span> = YZ çelişki buldu</div></div>
+      <label class="inline-flex items-center gap-2 text-xs text-slate-600"><input type="checkbox" class="rounded border-slate-300 text-slate-900 focus:ring-[#6366F1]"/>Yalnız farkları göster</label>
+    </div>
+    <div class="overflow-x-auto">
+    <table class="w-full min-w-[640px] text-xs">
+      <thead class="bg-slate-50 text-[11px] font-semibold uppercase tracking-wide text-slate-400"><tr><th class="text-left px-5 py-2.5 w-[22%]">Konu</th><th class="text-left px-3 py-2.5">Şantiye yetkilisi · Form 02</th><th class="text-left px-3 py-2.5">Pompacı · Form 03</th><th class="text-left px-3 py-2.5 w-[16%]">YZ</th></tr></thead>
+      <tbody class="divide-y divide-slate-100">
+        <tr class="bg-rose-50/40"><td class="px-5 py-3 font-medium text-slate-800">Havai elektrik hattı</td><td class="px-3 py-3">m.3 Enerji kesme izni gerektiren çalışma yok → <b class="text-emerald-600">Evet</b></td><td class="px-3 py-3">m.7 Güvenli mesafe sağlanabiliyor → <b class="text-emerald-600">Evet</b><br/><span class="text-slate-500">Beyan: 7,5–10 m</span></td><td class="px-3 py-3"><span class="inline-flex text-[11px] font-semibold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-full">Çelişki</span><div class="mt-1 text-[11px] text-slate-500">Foto: 6–8 m</div></td></tr>
+        <tr><td class="px-5 py-3 font-medium text-slate-800">Yeraltı altyapı</td><td class="px-3 py-3">m.1 Gizli altyapı/boşluk sorunu yok → <b class="text-emerald-600">Evet</b></td><td class="px-3 py-3">m.5 Ayak altında rögar/menhol riski yok → <b class="text-emerald-600">Evet</b></td><td class="px-3 py-3"><span class="inline-flex text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Tutarlı</span></td></tr>
+        <tr><td class="px-5 py-3 font-medium text-slate-800">Şev / kazı kenarı</td><td class="px-3 py-3">m.2 Yol levhaları ve şev güvenliği sağlandı → <b class="text-emerald-600">Evet</b></td><td class="px-3 py-3">m.2 Ayaklar şev/dolgudan güvenli mesafede → <b class="text-emerald-600">Evet</b></td><td class="px-3 py-3"><span class="inline-flex text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Tutarlı</span><div class="mt-1 text-[11px] text-slate-500">Fotoğrafta kazı yok</div></td></tr>
+        <tr class="bg-amber-50/40"><td class="px-5 py-3 font-medium text-slate-800">Zemin</td><td class="px-3 py-3 text-slate-400">— (Form 02'de madde yok)</td><td class="px-3 py-3">m.8 Zemin gözle uygun → <b class="text-emerald-600">Evet</b></td><td class="px-3 py-3"><span class="inline-flex text-[11px] font-semibold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-full">Kanıt yok</span><div class="mt-1 text-[11px] text-slate-500">Zemin fotoğrafı eksik</div></td></tr>
+        <tr><td class="px-5 py-3 font-medium text-slate-800">Gece çalışması / aydınlatma</td><td class="px-3 py-3">m.4 Yeterli aydınlatma var → <b class="text-emerald-600">Evet</b> <span class="text-slate-500">"gece dökümü yok"</span></td><td class="px-3 py-3">m.3 Yeterli aydınlatma → <b class="text-emerald-600">Evet</b></td><td class="px-3 py-3"><span class="inline-flex text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Tutarlı</span></td></tr>
+        <tr><td class="px-5 py-3 font-medium text-slate-800">Yol / manevra</td><td class="px-3 py-3 text-slate-400">—</td><td class="px-3 py-3">m.1 Yol ve manevra uygun → <b class="text-emerald-600">Evet</b> <span class="text-slate-500">"mikser girişi dar"</span></td><td class="px-3 py-3"><span class="inline-flex text-[11px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Uyarı</span></td></tr>
+        <tr><td class="px-5 py-3 font-medium text-slate-800">Sonuç</td><td class="px-3 py-3"><b>Döküm yapılabilir</b></td><td class="px-3 py-3"><b>İlave tedbir sonrası döküm yapılabilir</b><br/><span class="text-slate-500">"işaretçi bulundurulacak"</span></td><td class="px-3 py-3"><span class="inline-flex text-[11px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Farklı</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="grid sm:grid-cols-2 gap-4">
+    <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex items-center justify-between gap-3"><div class="flex items-center gap-3"><span class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center"><i data-ikon="file" class="w-5 h-5"></i></span><div><div class="text-sm font-semibold text-slate-900">Form 02 · İSG Uygunluk Beyanı</div><div class="text-[11px] text-slate-400">Kemal Aydın · e-imza (SMS) · 17.11 16:40</div></div></div><button data-toast="İmzalı PDF indiriliyor" class="p-2 rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50"><i data-ikon="download" class="w-4 h-4"></i></button></div>
+    <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex items-center justify-between gap-3"><div class="flex items-center gap-3"><span class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center"><i data-ikon="file" class="w-5 h-5"></i></span><div><div class="text-sm font-semibold text-slate-900">Form 03 · Pompa Değerlendirmesi</div><div class="text-[11px] text-slate-400">Serkan Demir · e-imza (SMS) · 18.11 10:15</div></div></div><button data-toast="İmzalı PDF indiriliyor" class="p-2 rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50"><i data-ikon="download" class="w-4 h-4"></i></button></div>
+  </div>
+</div>
+
+<!-- ===== SEKME: GEÇMİŞ ===== -->
+<div data-sekme-panel="gecmis" class="hidden">
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="text-sm font-semibold text-slate-900 mb-1">İz kaydı</div>
+    <p class="text-[11px] text-slate-400 mb-4">Değiştirilemez · YZ önerileri ve insan kararları birlikte tutulur</p>
+    <ol class="relative border-l border-slate-200 ml-2 space-y-5">
+      <li class="ml-5"><span class="absolute -left-[7px] w-3.5 h-3.5 rounded-full bg-amber-500 ring-4 ring-white"></span><div class="text-xs font-semibold text-slate-800">İncelemeye alındı</div><div class="text-[11px] text-slate-400">18.11.2026 10:17 · Murat Yıldız'a atandı</div></li>
+      <li class="ml-5"><span class="absolute -left-[7px] w-3.5 h-3.5 rounded-full bg-[#4338CA] ring-4 ring-white"></span><div class="text-xs font-semibold text-slate-800">YZ ön analizi tamamlandı — Yüksek (78)</div><div class="text-[11px] text-slate-400">18.11.2026 10:17 · 2 çelişki, 1 eksik, 2 uyarı · model sürümü ve girdi özeti kaydedildi</div></li>
+      <li class="ml-5"><span class="absolute -left-[7px] w-3.5 h-3.5 rounded-full bg-slate-900 ring-4 ring-white"></span><div class="text-xs font-semibold text-slate-800">Form 03 imzalandı ve gönderildi</div><div class="text-[11px] text-slate-400">18.11.2026 10:15 · Serkan Demir · SMS doğrulama · 5 fotoğraf, 1 video, 1 kroki</div></li>
+      <li class="ml-5"><span class="absolute -left-[7px] w-3.5 h-3.5 rounded-full bg-[#4338CA] ring-4 ring-white"></span><div class="text-xs font-semibold text-slate-800">Portalda YZ uyarısı: "Pompa ayağı zemini fotoğrafı eksik"</div><div class="text-[11px] text-slate-400">18.11.2026 10:12 · pompacı uyarıyı geçerek gönderdi</div></li>
+      <li class="ml-5"><span class="absolute -left-[7px] w-3.5 h-3.5 rounded-full bg-slate-900 ring-4 ring-white"></span><div class="text-xs font-semibold text-slate-800">Form 03 bağlantısı açıldı</div><div class="text-[11px] text-slate-400">18.11.2026 09:31 · Akdeniz Pompa · mobil</div></li>
+      <li class="ml-5"><span class="absolute -left-[7px] w-3.5 h-3.5 rounded-full bg-slate-900 ring-4 ring-white"></span><div class="text-xs font-semibold text-slate-800">Form 02 imzalandı ve gönderildi</div><div class="text-[11px] text-slate-400">17.11.2026 16:40 · Kemal Aydın · SMS doğrulama · KVKK aydınlatma onayı</div></li>
+      <li class="ml-5"><span class="absolute -left-[7px] w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></span><div class="text-xs font-semibold text-slate-800">Bağlantılar gönderildi (SMS + WhatsApp)</div><div class="text-[11px] text-slate-400">15.11.2026 14:05 · şantiye yetkilisi ve pompacı · 7 gün geçerli</div></li>
+      <li class="ml-5"><span class="absolute -left-[7px] w-3.5 h-3.5 rounded-full bg-[#4338CA] ring-4 ring-white"></span><div class="text-xs font-semibold text-slate-800">YZ adres analizi: 14,2 km, Kemalpaşa Santrali önerildi</div><div class="text-[11px] text-slate-400">15.11.2026 14:02 · öneri kabul edildi</div></li>
+      <li class="ml-5"><span class="absolute -left-[7px] w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></span><div class="text-xs font-semibold text-slate-800">Talep oluşturuldu</div><div class="text-[11px] text-slate-400">15.11.2026 14:01 · Burak Şen (Satış)</div></li>
+    </ol>
+  </div>
+</div>
+
+</div>
+
+<!-- Sağ sütun -->
+<aside class="lg:col-span-4 space-y-5">
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="text-sm font-semibold text-slate-900 mb-3">Proje bilgileri</div>
+    <dl class="space-y-2.5 text-xs">
+      <div class="flex justify-between gap-3"><dt class="text-slate-400">Santral</dt><dd class="font-medium text-slate-800 text-right">Kemalpaşa Santrali</dd></div>
+      <div class="flex justify-between gap-3"><dt class="text-slate-400">Müşteri / Bayi</dt><dd class="font-medium text-slate-800 text-right">Ege Yapı İnşaat Ltd. Şti.</dd></div>
+      <div class="flex justify-between gap-3"><dt class="text-slate-400">Adres</dt><dd class="font-medium text-slate-800 text-right">Ulucak Mah. 1203 Sk. No:14<br/>Kemalpaşa / İzmir</dd></div>
+      <div class="flex justify-between gap-3"><dt class="text-slate-400">Mesafe</dt><dd class="font-medium text-slate-800 text-right tnum">14,2 km <span class="text-[#4338CA]">✦</span></dd></div>
+      <div class="flex justify-between gap-3"><dt class="text-slate-400">Döküm şekli</dt><dd class="font-medium text-slate-800 text-right">Pompalı · 42 m bom</dd></div>
+      <div class="flex justify-between gap-3"><dt class="text-slate-400">Miktar / tarih</dt><dd class="font-medium text-slate-800 text-right">~180 m³ · 21.11.2026 08:00</dd></div>
+    </dl>
+    <div class="mt-4 relative h-28 rounded-xl overflow-hidden bg-[#E9EEF3] border border-slate-100">
+      <svg viewBox="0 0 300 112" class="absolute inset-0 w-full h-full" preserveAspectRatio="none"><path d="M0 70 C60 60 90 90 150 72 S250 40 300 50" stroke="#fff" stroke-width="9" fill="none"/><path d="M110 0 L130 112" stroke="#fff" stroke-width="6"/><path d="M0 30 L300 22" stroke="#cbd5e1" stroke-width="3" fill="none"/><path d="M0 35 L300 27" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="4 3" fill="none"/></svg>
+      <span class="absolute left-[46%] top-[38%] -translate-x-1/2 -translate-y-full text-rose-500"><i data-ikon="pin" class="w-6 h-6"></i></span>
+      <span class="absolute right-2 top-2 text-[10px] font-semibold text-rose-600 bg-white/90 px-1.5 py-0.5 rounded">— havai hat (OSM)</span>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between mb-3"><span class="text-sm font-semibold text-slate-900">Havai hat kriteri</span><span class="text-[10px] text-slate-400">ÇSGB Kart 6</span></div>
+    <ul class="space-y-1.5 text-xs">
+      <li class="flex items-center justify-between gap-2 px-3 py-2 rounded-lg bg-slate-50"><span class="font-mono text-slate-500">&gt;10 m</span><span class="text-slate-700">Çalışılabilir</span></li>
+      <li class="flex items-center justify-between gap-2 px-3 py-2 rounded-lg bg-slate-50 ring-1 ring-dashed ring-slate-400"><span class="font-mono text-slate-500">7,5–10 m</span><span class="text-slate-700">Ortak değerlendirme <span class="text-[10px] text-slate-400">· beyan</span></span></li>
+      <li class="flex items-center justify-between gap-2 px-3 py-2 rounded-lg bg-[#EEF2FF] ring-2 ring-[#4338CA]"><span class="font-mono text-[#4338CA] font-semibold">6–7,5 m</span><span class="text-slate-800 font-medium">İlave tedbir şart <span class="text-[10px] text-[#4338CA]">✦ YZ</span></span></li>
+      <li class="flex items-center justify-between gap-2 px-3 py-2 rounded-lg bg-slate-50"><span class="font-mono text-slate-500">&lt;6 m</span><span class="text-slate-700">Enerji kesilmeli</span></li>
+    </ul>
+    <p class="mt-2 text-[11px] text-slate-400">Yağışlı havada mesafeler iki katına çıkar.</p>
+  </div>
+
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="text-sm font-semibold text-slate-900 mb-3">Kişiler</div>
+    <ul class="space-y-3">
+      <li class="flex items-center justify-between gap-3"><div class="flex items-center gap-3 min-w-0"><span class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold flex items-center justify-center">KA</span><div class="min-w-0"><div class="text-sm font-medium text-slate-800 truncate">Kemal Aydın</div><div class="text-[11px] text-slate-400">Şantiye Şefi · Ege Yapı</div></div></div><button data-toast="Arama başlatılıyor (0532 *** 41 27)" class="p-2 rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50"><i data-ikon="phone" class="w-3.5 h-3.5"></i></button></li>
+      <li class="flex items-center justify-between gap-3"><div class="flex items-center gap-3 min-w-0"><span class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold flex items-center justify-center">SD</span><div class="min-w-0"><div class="text-sm font-medium text-slate-800 truncate">Serkan Demir</div><div class="text-[11px] text-slate-400">Pompa Operatörü · Akdeniz Pompa</div></div></div><button data-toast="Arama başlatılıyor" class="p-2 rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50"><i data-ikon="phone" class="w-3.5 h-3.5"></i></button></li>
+      <li class="flex items-center justify-between gap-3"><div class="flex items-center gap-3 min-w-0"><span class="w-9 h-9 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold flex items-center justify-center">BŞ</span><div class="min-w-0"><div class="text-sm font-medium text-slate-800 truncate">Burak Şen</div><div class="text-[11px] text-slate-400">Satış Temsilcisi · talebi açan</div></div></div><button data-toast="Arama başlatılıyor" class="p-2 rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50"><i data-ikon="phone" class="w-3.5 h-3.5"></i></button></li>
+    </ul>
+  </div>
+
+  <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+    <div class="flex items-center justify-between mb-3"><span class="text-sm font-semibold text-slate-900">Görsel kayıtlar</span><a href="talep-fotograflar.html" class="text-xs font-medium text-[#4338CA] hover:underline">Tümü →</a></div>
+    <div class="grid grid-cols-3 gap-2">
+      <a href="talep-fotograflar.html" class="relative aspect-square rounded-lg overflow-hidden"><img src="assets/foto-hat-bina.jpg" alt="Hat ve pompa alanı" class="w-full h-full object-cover"/><span class="absolute bottom-1 left-1 text-[9px] font-semibold text-white bg-rose-500 px-1 rounded">HAT</span></a>
+      <a href="talep-fotograflar.html" class="relative aspect-square rounded-lg overflow-hidden"><img src="assets/foto-hat-sokak.jpg" alt="Mikser güzergahı" class="w-full h-full object-cover"/><span class="absolute bottom-1 left-1 text-[9px] font-semibold text-white bg-amber-500 px-1 rounded">YOL</span></a>
+      <a href="talep-fotograflar.html" class="aspect-square rounded-lg border-2 border-dashed border-rose-200 bg-rose-50/50 flex flex-col items-center justify-center text-center text-rose-500"><i data-ikon="camera" class="w-4 h-4"></i><span class="mt-1 text-[9px] font-semibold leading-tight">Zemin<br/>eksik</span></a>
+    </div>
+  </div>
+</aside>
+</div>
+</div>
+
+<!-- MODAL: İlave bilgi iste -->
+<div id="ek-bilgi" data-modal data-kapat-zemin class="hidden fixed inset-0 z-50 bg-slate-900/40 flex items-center justify-center p-4">
+  <div class="w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-2xl">
+    <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white">
+      <div class="flex items-center gap-2.5"><span class="w-8 h-8 rounded-lg bg-[#E0E7FF] text-[#4338CA] flex items-center justify-center"><i data-ikon="sparkle" class="w-4 h-4"></i></span><div><div class="text-sm font-semibold text-slate-900">İlave bilgi talebi</div><div class="text-[11px] text-slate-400">Taslağı YZ hazırladı · göndermeden düzenleyebilirsiniz</div></div></div>
+      <button data-kapat class="p-1.5 rounded-lg text-slate-400 hover:bg-slate-100"><i data-ikon="x" class="w-4 h-4"></i></button>
+    </div>
+    <div class="px-6 py-5 space-y-5">
+      <div>
+        <div class="text-xs font-semibold text-slate-700 mb-2">İstenecekler</div>
+        <div class="space-y-2">
+          <label class="flex items-start gap-3 p-3 rounded-xl border border-slate-200 has-[:checked]:border-slate-900 has-[:checked]:bg-[#E0E7FF]/40"><input type="checkbox" checked class="mt-0.5 rounded border-slate-300 text-slate-900 focus:ring-[#6366F1]"/><span class="text-xs"><b class="font-semibold text-slate-800">Hat – pompa ayağı mesafe ölçümü (fotoğraflı)</b><span class="block text-slate-500">Kime: Kemal Aydın (şantiye) · Bulgu 1</span></span></label>
+          <label class="flex items-start gap-3 p-3 rounded-xl border border-slate-200 has-[:checked]:border-slate-900 has-[:checked]:bg-[#E0E7FF]/40"><input type="checkbox" checked class="mt-0.5 rounded border-slate-300 text-slate-900 focus:ring-[#6366F1]"/><span class="text-xs"><b class="font-semibold text-slate-800">Pompa ayağı zemini fotoğrafı</b><span class="block text-slate-500">Kime: Serkan Demir (pompacı) · Bulgu 3</span></span></label>
+          <label class="flex items-start gap-3 p-3 rounded-xl border border-slate-200 has-[:checked]:border-slate-900 has-[:checked]:bg-[#E0E7FF]/40"><input type="checkbox" checked class="mt-0.5 rounded border-slate-300 text-slate-900 focus:ring-[#6366F1]"/><span class="text-xs"><b class="font-semibold text-slate-800">Bom açılım yönlü güncel kroki + bariyerleme/çalışma planı</b><span class="block text-slate-500">Kime: Serkan Demir (pompacı) · Bulgu 2</span></span></label>
+          <label class="flex items-start gap-3 p-3 rounded-xl border border-slate-200 has-[:checked]:border-slate-900 has-[:checked]:bg-[#E0E7FF]/40"><input type="checkbox" class="mt-0.5 rounded border-slate-300 text-slate-900 focus:ring-[#6366F1]"/><span class="text-xs"><b class="font-semibold text-slate-800">Yağış halinde erteleme teyidi</b><span class="block text-slate-500">Kime: Kemal Aydın (şantiye) · Uyarı</span></span></label>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center justify-between mb-2"><span class="text-xs font-semibold text-slate-700">Mesaj</span><button data-toast="YZ: daha resmi bir ton ile yeniden yazıldı" class="inline-flex items-center gap-1 text-[11px] font-medium text-[#4338CA]"><i data-ikon="sparkle" class="w-3 h-3"></i>Tonu değiştir</button></div>
+        <textarea rows="7" class="w-full rounded-xl border-slate-200 text-sm text-slate-700 focus:border-[#6366F1] focus:ring-[#6366F1]/20">Sayın Kemal Aydın, Sayın Serkan Demir,
+
+Yıldız Konutları B Blok (ŞNT-2026-0418) şantiyesi için gönderdiğiniz formlar incelendi. Fotoğraflarda pompa kurulacak alanın üzerinden geçen havai hattın mesafesi beyan edilen değerden yakın görünüyor. Sevkiyat değerlendirmesini tamamlayabilmemiz için aşağıdaki bilgileri aynı bağlantı üzerinden iletmenizi rica ederiz:
+• Hat ile pompa ayağı noktası arasındaki mesafenin şerit metre ile ölçüldüğü fotoğraf
+• Pompa ayağı zemininin yakın çekim fotoğrafı
+• Bom açılım yönünü gösteren güncel kroki ve bariyerleme/çalışma planı
+
+Murat Yıldız · Tesis Şefi, Kemalpaşa Santrali</textarea>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 text-xs text-slate-600">
+        <span class="font-semibold text-slate-700">Kanal:</span>
+        <label class="inline-flex items-center gap-1.5"><input type="checkbox" checked class="rounded border-slate-300 text-slate-900"/>SMS</label>
+        <label class="inline-flex items-center gap-1.5"><input type="checkbox" checked class="rounded border-slate-300 text-slate-900"/>WhatsApp</label>
+        <label class="inline-flex items-center gap-1.5"><input type="checkbox" class="rounded border-slate-300 text-slate-900"/>E-posta</label>
+        <span class="text-slate-400">· İlgili form adımları yeniden açılır</span>
+      </div>
+    </div>
+    <div class="px-6 py-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 bg-slate-50/60 rounded-b-2xl">
+      <span class="text-[11px] text-slate-400">Durum "Ek bilgi istendi" olur · süre: 48 saat</span>
+      <div class="flex gap-2"><button data-kapat class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-medium text-slate-600 hover:bg-slate-50">Vazgeç</button><button data-kapat onclick="ui.toast('Talep gönderildi · durum: Ek bilgi istendi')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-xs font-medium text-white hover:bg-slate-800"><i data-ikon="send" class="w-3.5 h-3.5"></i>Gönder</button></div>
+    </div>
+  </div>
+</div>
+
+</main>
+</body>
+</html>

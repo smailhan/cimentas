@@ -1,0 +1,10 @@
+# Müşteri belgeleri (gizlilik sözleşmesi kapsamında) — depoya girmez
+docs/
+
+# Yerel / geçici
+.claude/settings.local.json
+__pycache__/
+*.pyc
+Thumbs.db
+desktop.ini
+.DS_Store

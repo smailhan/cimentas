@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Şantiye Sevkiyat Platformu</title>
+<script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms"></script>
+<script src="assets/kabuk.js"></script>
+</head>
+<body data-kabuk="portal">
+<header class="bg-white border-b border-[#E8EAEE]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <span class="w-10 h-10 rounded-2xl bg-[#C7D2FE] text-[#1E1B4B] flex items-center justify-center"><i data-ikon="pump" class="w-6 h-6"></i></span>
+      <div><div class="text-sm font-semibold text-slate-900">Şantiye Sevkiyat Değerlendirme Platformu</div><div class="text-[11px] text-slate-400">Çimbeton · PoC tıklanabilir mockup · v0.1 · 18.11.2026</div></div>
+    </div>
+    <a href="talep-yeni.html" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-900 text-xs font-medium text-white hover:bg-slate-800">Demoyu başlat<i data-ikon="arrow-r" class="w-3.5 h-3.5"></i></a>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8">
+  <section class="grid lg:grid-cols-[1.3fr_1fr] gap-6 items-center">
+    <div>
+      <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#4338CA] bg-[#E0E7FF] px-2 py-1 rounded-full"><i data-ikon="sparkle" class="w-3.5 h-3.5"></i>Yapay zekâ destekli İSG ön değerlendirme</span>
+      <h1 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Yeni şantiyeden ilk sevkiyata, tek akışta.</h1>
+      <p class="mt-3 text-sm md:text-base text-slate-600 leading-relaxed max-w-xl">EK-1 Şantiye Sevkiyat Değerlendirme ve Açılış Talimatı'ndaki üç form, onay zinciri ve Group Master Data açılışı tek platformda. Yapay zekâ fotoğrafları sınıflandırır, havai hat riskini tespit eder, beyanları çapraz kontrol eder ve Form 01'i ön doldurur. <b class="font-semibold text-slate-800">Kararı her zaman tesis yetkilisi verir.</b></p>
+      <div class="mt-5 flex flex-wrap gap-2">
+        <a href="talep-yeni.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-slate-900 text-sm font-medium text-white hover:bg-slate-800"><i data-ikon="play" class="w-4 h-4"></i>Demoyu baştan izle</a>
+        <a href="talep-detay.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg border border-slate-200 bg-white text-sm font-medium text-slate-700 hover:bg-slate-50"><i data-ikon="sparkle" class="w-4 h-4 text-[#4338CA]"></i>Doğrudan YZ analizine git</a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-3">
+      <div class="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm"><div class="text-2xl font-bold tracking-tight text-slate-900 tnum">3 → 1</div><div class="text-xs text-slate-500 mt-1">kâğıt form tek dijital akışta</div></div>
+      <div class="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm"><div class="text-2xl font-bold tracking-tight text-slate-900 tnum">15/15</div><div class="text-xs text-slate-500 mt-1">Form 01 maddesi YZ ve sistem tarafından önerilir</div></div>
+      <div class="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm"><div class="text-2xl font-bold tracking-tight text-slate-900 tnum">6</div><div class="text-xs text-slate-500 mt-1">zorunlu fotoğraf türü anında kontrol edilir</div></div>
+      <div class="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm"><div class="text-2xl font-bold tracking-tight text-slate-900 tnum">0</div><div class="text-xs text-slate-500 mt-1">uygulama kurulumu (dış kullanıcıya SMS bağlantısı)</div></div>
+    </div>
+  </section>
+
+  <!-- Akış -->
+  <section>
+    <div class="flex items-end justify-between gap-3 mb-4"><div><h2 class="text-lg font-semibold text-slate-900">Demo akışı</h2><p class="text-xs text-slate-500">EK-1 iş akışı sırasıyla · senaryo: ŞNT-2026-0418 Yıldız Konutları B Blok</p></div></div>
+    <ol class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="akis"></ol>
+  </section>
+
+  <section class="grid md:grid-cols-2 gap-5">
+    <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
+      <h3 class="text-sm font-semibold text-slate-900">Akış dışındaki ekranlar</h3>
+      <div class="mt-3 grid grid-cols-2 gap-2">
+        <a href="talepler.html" class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-100 hover:border-slate-300"><i data-ikon="list" class="w-4 h-4 text-slate-500"></i><span class="text-xs font-medium text-slate-800">Talepler listesi</span></a>
+        <a href="raporlar.html" class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-100 hover:border-slate-300"><i data-ikon="chart" class="w-4 h-4 text-slate-500"></i><span class="text-xs font-medium text-slate-800">Raporlar ve YZ içgörüleri</span></a>
+        <a href="ayarlar.html" class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-100 hover:border-slate-300"><i data-ikon="settings" class="w-4 h-4 text-slate-500"></i><span class="text-xs font-medium text-slate-800">Ayarlar: eşikler ve YZ</span></a>
+        <a href="talep-fotograflar.html" class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-100 hover:border-slate-300"><i data-ikon="camera" class="w-4 h-4 text-slate-500"></i><span class="text-xs font-medium text-slate-800">Fotoğraf analizi</span></a>
+      </div>
+    </div>
+    <div class="rounded-2xl p-5 border border-[#E0E7FF] bg-[#EEF2FF]">
+      <h3 class="text-sm font-semibold text-[#1E1B4B] flex items-center gap-2"><i data-ikon="sparkle" class="w-4 h-4 text-[#4338CA]"></i>Yapay zekânın devreye girdiği noktalar</h3>
+      <ul class="mt-3 space-y-1.5 text-xs text-[#3730A3]">
+        <li>• <b>Talep:</b> adresten mesafe, santral önerisi, havai hat ön taraması, mesajdan otomatik doldurma</li>
+        <li>• <b>Formlar:</b> sade dille açıklama, anlık tutarlılık uyarısı, sesle yanıt</li>
+        <li>• <b>Fotoğraf:</b> tür sınıflandırma, kalite ve konum kontrolü, hat ve risk tespiti, mesafe tahmini, kroki dijitalleştirme</li>
+        <li>• <b>İnceleme:</b> çapraz kontrol, risk skoru, Form 01 ön doldurma, ilave bilgi taslağı</li>
+        <li>• <b>Onay:</b> bölge müdürüne 5 satırlık özet, Master Data alanlarının hazırlanması</li>
+        <li>• <b>Yönetim:</b> eğilim ve pompacı kalite içgörüleri</li>
+      </ul>
+    </div>
+  </section>
+  <p class="text-[11px] text-slate-400 text-center">Tüm kişi ve firma adları hayalidir. Fotoğraflar örnek keşif görselleridir. Mockup statiktir; YZ çıktıları temsilîdir.</p>
+</main>
+<script>
+var A = [
+  ['talep-yeni.html','Satış temsilcisi','Yeni şantiye talebi','Adres analizi, santral önerisi, bağlantıların gönderilmesi','plus','web'],
+  ['portal-form02.html','Şantiye yetkilisi','İSG uygunluk beyanı · Form 02','SMS bağlantısı, adım adım beyan, YZ uyarısı, imza','user','mobil'],
+  ['portal-form03.html','Pompa hizmet sağlayıcı','Şantiye değerlendirmesi · Form 03','Kontrol maddeleri, hat kriteri, fotoğraf + anlık YZ analizi, kroki','camera','mobil'],
+  ['pano.html','Tesis şefi','Tesis panosu','YZ risk sıralı iş kuyruğu ve göstergeler','grid','web'],
+  ['talep-detay.html','Tesis şefi','YZ ön analizi ve inceleme','Çelişkiler, kanıtlar, formlar yan yana, ilave bilgi talebi','sparkle','web'],
+  ['talep-fotograflar.html','Tesis şefi','Fotoğraf ve video analizi','Tespit kutuları, mesafe tahmini, video kareleri, kroki','image','web'],
+  ['talep-form01.html','Tesis şefi','Sevkiyat değerlendirmesi · Form 01','15 maddenin YZ önerisi, kabul/değiştir, karar ve imza','file','web'],
+  ['bolge-onay.html','Bölge müdürü','Bölge müdürü onayı','5 satırlık YZ özeti, risk kartı, tek dokunuşla onay','check-circle','mobil'],
+  ['master-data.html','Group Master Data','Şantiye açılışı','Onay zinciri, hazır alanlar, ERP aktarımı','database','web']
+];
+document.addEventListener('DOMContentLoaded', function(){
+  document.getElementById('akis').innerHTML = A.map(function(a,i){
+    return '<li><a href="'+a[0]+'" class="group block h-full bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:border-slate-300 transition">'+
+      '<div class="flex items-center justify-between"><span class="w-9 h-9 rounded-xl '+(a[4]==='sparkle'?'bg-[#E0E7FF] text-[#4338CA]':'bg-slate-100 text-slate-600')+' flex items-center justify-center">'+ui.svg(a[4])+'</span><span class="text-[11px] font-semibold text-slate-300 tnum">'+String(i+1).padStart(2,'0')+'</span></div>'+
+      '<div class="mt-4 flex items-center gap-2"><span class="text-[11px] font-semibold text-slate-500">'+a[1]+'</span><span class="text-[10px] font-semibold px-1.5 py-0.5 rounded '+(a[5]==='mobil'?'bg-amber-50 text-amber-700':'bg-slate-100 text-slate-500')+'">'+a[5]+'</span></div>'+
+      '<div class="mt-1 text-sm font-semibold text-slate-900 group-hover:underline">'+a[2]+'</div><p class="mt-1 text-xs text-slate-500">'+a[3]+'</p></a></li>';
+  }).join('');
+});
+</script>
+</body>
+</html>
